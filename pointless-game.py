@@ -27,13 +27,22 @@ def wrongAnswer():
     value_string.set("X")
     
 
-
 def checkAnswer(answers, answer):
+    answer = answer.lower()
     time.sleep(2)
     if answer in answers:
         countDown(answers[answer])
     else:
         wrongAnswer()
+
+def addTeam():
+    global teamName_string
+    global teams
+    teamName = teamName_string.get()
+    teamNumber = len(teams) + 1
+    teams[teamNumber] = {"name": teamName, "score": tk.IntVar(), "element": None, "out": False}
+    
+
 
 answers = {"red": 57, "green": 24, "yellow": 9, "white": 4}
 numberOfTeams = 5
@@ -47,6 +56,7 @@ window.columnconfigure(1, weight=1)
 value_progress = tk.IntVar()
 value_string = tk.StringVar()
 answer_string = tk.StringVar()
+teamName_string = tk.StringVar()
 teams = {f"Team {i+1}": {"name": "", "score": tk.IntVar(), "out": False} for i in range(5) }
 
 
@@ -58,6 +68,10 @@ textFrame.grid(row=0, column=0, pady=8, padx=8)
 
 teamFrame = tk.Frame(window)
 teamFrame.grid(row=1, column=0, columnspan=2, pady=8, padx=8)
+
+teamFrame.columnconfigure(0, weight=1)
+teamFrame.columnconfigure(1, weight=1)
+teamFrame.columnconfigure(2, weight=1)
 
 labelProgress = tk.Label(barFrame, textvariable=value_string)
 labelProgress.pack()
@@ -89,5 +103,11 @@ answerField.pack()
 
 buttonS = tk.Button(textFrame, text="Check Answer", command=lambda: checkAnswer(answers, answer_string.get()))
 buttonS.pack()
+
+teamEntry = tk.Entry(teamFrame, textvariable=teamName_string, width=40)
+teamEntry.grid(column=0, row=0, pady=8, padx=8)
+
+buttonAddTeam = tk.Button(teamFrame, text="Add Team", command=addTeam)
+buttonAddTeam.grid(column=0, row=1, pady=8, padx=8)
 
 window.mainloop()
