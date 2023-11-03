@@ -19,7 +19,7 @@ def countDown(stopPoint):
     value_string.set(str(progress))
     if progress != stopPoint:
         progressbar.step(-1)
-        window.after(50, lambda: countDown(stopPoint))
+        window.after(75, lambda: countDown(stopPoint))
 
 def wrongAnswer():
     global value_string
