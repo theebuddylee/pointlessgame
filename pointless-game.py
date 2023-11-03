@@ -35,13 +35,29 @@ def checkAnswer(answers, answer):
     else:
         wrongAnswer()
 
+def placeTeamWidget(frame, teamNumber):
+    rowNum = teamNumber // 3
+    colNum = teamNumber % 3
+    # print(f"row: {rowNum}, col: {colNum}")
+    frame.grid(column=colNum, row=rowNum, pady=8, padx=8, sticky='nsew')
+
 def addTeam():
     global teamName_string
     global teams
     teamName = teamName_string.get()
-    teamNumber = len(teams) + 1
-    teams[teamNumber] = {"name": teamName, "score": tk.IntVar(), "element": None, "out": False}
-    
+    teamNumber = len(teams)
+    teams[teamNumber] = {"name": teamName, "score": tk.IntVar(), "teamFrame": None, "teamScoreElement": None, "out": False}
+    teamBoxFrame = tk.Frame(teamBoxesFrame, highlightbackground="blue", highlightthickness=2)
+    placeTeamWidget(teamBoxFrame, teamNumber)
+    teamBoxLabel = tk.Label(teamBoxFrame, text=teamName)
+    teamBoxLabel.pack()
+    teamScoreLabel = tk.Label(teamBoxFrame, textvariable=teams[teamNumber]["score"])
+    teamScoreLabel.pack()
+    teams[teamNumber]["element"] = teamBoxFrame
+    teams[teamNumber]["teamScoreElement"] = teamBoxFrame
+
+def startGame():
+    return None
 
 
 answers = {"red": 57, "green": 24, "yellow": 9, "white": 4}
@@ -57,21 +73,26 @@ value_progress = tk.IntVar()
 value_string = tk.StringVar()
 answer_string = tk.StringVar()
 teamName_string = tk.StringVar()
-teams = {f"Team {i+1}": {"name": "", "score": tk.IntVar(), "out": False} for i in range(5) }
+teams = {}
 
 
-barFrame = tk.Frame(window)
-barFrame.grid(row=0, column=1, pady=8, padx=8)
+barFrame = tk.Frame(window, highlightbackground="red", highlightthickness=2)
+barFrame.grid(row=0, column=1, pady=8, padx=8, sticky='nsew')
 
-textFrame = tk.Frame(window)
-textFrame.grid(row=0, column=0, pady=8, padx=8)
+textFrame = tk.Frame(window, highlightbackground="green", highlightthickness=2)
+textFrame.grid(row=0, column=0, pady=8, padx=8, sticky='nsew')
 
-teamFrame = tk.Frame(window)
-teamFrame.grid(row=1, column=0, columnspan=2, pady=8, padx=8)
+teamFrame = tk.Frame(window, highlightbackground="blue", highlightthickness=2)
+teamFrame.grid(row=1, column=0, columnspan=2, pady=8, padx=8, sticky='nsew')
 
 teamFrame.columnconfigure(0, weight=1)
 teamFrame.columnconfigure(1, weight=1)
-teamFrame.columnconfigure(2, weight=1)
+
+teamBoxesFrame = tk.Frame(teamFrame, highlightbackground="yellow", highlightthickness=2)
+teamBoxesFrame.grid(row=2, column=0, columnspan=2, pady=8, padx=8, sticky='nsew')
+teamBoxesFrame.columnconfigure(0, weight=1)
+teamBoxesFrame.columnconfigure(1, weight=1)
+teamBoxesFrame.columnconfigure(2, weight=1)
 
 labelProgress = tk.Label(barFrame, textvariable=value_string)
 labelProgress.pack()
@@ -109,5 +130,8 @@ teamEntry.grid(column=0, row=0, pady=8, padx=8)
 
 buttonAddTeam = tk.Button(teamFrame, text="Add Team", command=addTeam)
 buttonAddTeam.grid(column=0, row=1, pady=8, padx=8)
+
+buttonStartGame = tk.Button(teamFrame, text="Start Game", command=startGame)
+buttonStartGame.grid(column=1, row=0, pady=8, padx=8)
 
 window.mainloop()
