@@ -1,6 +1,8 @@
 import tkinter as tk
 from tkinter.ttk import *
 import time
+import math
+import random
 
 def setMaxProgress():
     global value_progress
@@ -35,11 +37,26 @@ def checkAnswer(answers, answer):
     else:
         wrongAnswer()
 
+
+def eliminateLowestTeam():
+    global teams
+    minScore = (math.inf, -1)
+    for key, team in teams.items():
+        print(team)
+        score = team["score"].get()
+        if score < minScore[0]:
+            minScore = (score, key)
+
+    teams[minScore[1]]["eliminated"] = True
+    teams[minScore[1]]["teamFrame"].configure(highlightbackground="red")
+
+
 def placeTeamWidget(frame, teamNumber):
     rowNum = teamNumber // 3
     colNum = teamNumber % 3
     # print(f"row: {rowNum}, col: {colNum}")
     frame.grid(column=colNum, row=rowNum, pady=8, padx=8, sticky='nsew')
+
 
 def addTeam():
     global teamName_string
@@ -48,19 +65,36 @@ def addTeam():
     teamNumber = len(teams)
     teams[teamNumber] = {"name": teamName, "score": tk.IntVar(), "teamFrame": None, "teamScoreElement": None, "out": False}
     teamBoxFrame = tk.Frame(teamBoxesFrame, highlightbackground="blue", highlightthickness=2)
+    print(teamBoxFrame)
     placeTeamWidget(teamBoxFrame, teamNumber)
     teamBoxLabel = tk.Label(teamBoxFrame, text=teamName)
     teamBoxLabel.pack()
     teamScoreLabel = tk.Label(teamBoxFrame, textvariable=teams[teamNumber]["score"])
     teamScoreLabel.pack()
-    teams[teamNumber]["element"] = teamBoxFrame
+    print(teamBoxFrame)
+    teams[teamNumber]["teamFrame"] = teamBoxFrame
     teams[teamNumber]["teamScoreElement"] = teamBoxFrame
+
+
+def startRound():
+    global teams
+    for _, team in teams.items():
+        if not team["eliminated"]:
+            team["score"].set(0)
+
 
 def startGame():
     return None
 
 
 answers = {"red": 57, "green": 24, "yellow": 9, "white": 4}
+data = {
+    1: {},
+    2: {},
+    3: {},
+    4: {},
+    5: {}
+}
 numberOfTeams = 5
 
 window = tk.Tk()
@@ -133,5 +167,8 @@ buttonAddTeam.grid(column=0, row=1, pady=8, padx=8)
 
 buttonStartGame = tk.Button(teamFrame, text="Start Game", command=startGame)
 buttonStartGame.grid(column=1, row=0, pady=8, padx=8)
+
+buttonEliminateTeam = tk.Button(teamFrame, text="Eliminate Team", command=eliminateLowestTeam)
+buttonEliminateTeam.grid(column=1, row=1, pady=8, padx=8)
 
 window.mainloop()
