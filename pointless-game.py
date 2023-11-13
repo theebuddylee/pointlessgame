@@ -3,6 +3,16 @@ from tkinter.ttk import *
 import time
 import math
 import random
+import json
+
+
+def loadQuestions(filename):
+    global data
+
+    with open(filename, 'r') as file:
+        jsonData = json.load(file)
+        
+
 
 def setMaxProgress():
     global value_progress
@@ -89,7 +99,15 @@ def startGame():
 
 answers = {"red": 57, "green": 24, "yellow": 9, "white": 4}
 data = {
-    1: {},
+    1: {
+        "question": "",
+        "answers": {
+            "red": 57,
+            "green": 24,
+            "yellow": 9,
+            "white": 4
+        }
+    },
     2: {},
     3: {},
     4: {},
