@@ -6,12 +6,13 @@ import random
 import json
 
 
-def loadQuestions(filename):
+def loadQuestionJSON(filename, round):
     global data
-
+    # Opens json file and sets jsonData to a dict of the data in the file
     with open(filename, 'r') as file:
         jsonData = json.load(file)
-        
+        data[round] = jsonData
+    file.close()
 
 
 def setMaxProgress():
