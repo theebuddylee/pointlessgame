@@ -26,6 +26,37 @@ def setMaxProgress():
     s.configure("score.Vertical.TProgressbar", foreground='blue', background='blue')
     
 
+def nextTeam():
+    global currentTeam
+    global teams
+    global teamDirection
+
+    print(f"Before: {currentTeam}")
+    print(len(teams))
+
+    teams[currentTeam]["teamFrame"].configure(highlightbackground="blue")
+
+    if teamDirection == "asc":
+        if currentTeam < len(teams) - 1:
+            currentTeam += 1
+        else:
+            teamDirection = "desc"
+    else:
+        if currentTeam > 0:
+            currentTeam -= 1
+        else:
+            teamDirection = "asc"
+    
+    print(f"After: {currentTeam}")
+    teams[currentTeam]["teamFrame"].configure(highlightbackground="yellow")
+
+
+def setScore(score):
+    global teams
+    teams[currentTeam]["score"].set(score)
+    nextTeam()
+
+
 def countDown(stopPoint):
     global value_string
     progress = value_progress.get()
@@ -33,6 +64,8 @@ def countDown(stopPoint):
     if progress != stopPoint:
         progressbar.step(-1)
         window.after(75, lambda: countDown(stopPoint))
+    else:
+        setScore(stopPoint)
 
 def wrongAnswer():
     global value_string
@@ -41,6 +74,8 @@ def wrongAnswer():
     
 
 def checkAnswer(answers, answer):
+    global teams
+
     answer = answer.lower()
     time.sleep(2)
     if answer in answers:
@@ -51,15 +86,15 @@ def checkAnswer(answers, answer):
 
 def eliminateLowestTeam():
     global teams
-    minScore = (math.inf, -1)
+    maxScore = (math.inf * -1, -1)
     for key, team in teams.items():
         print(team)
         score = team["score"].get()
-        if score < minScore[0]:
-            minScore = (score, key)
+        if score > maxScore[0]:
+            maxScore = (score, key)
 
-    teams[minScore[1]]["eliminated"] = True
-    teams[minScore[1]]["teamFrame"].configure(highlightbackground="red")
+    teams[maxScore[1]]["eliminated"] = True
+    teams[maxScore[1]]["teamFrame"].configure(highlightbackground="red")
 
 
 def placeTeamWidget(frame, teamNumber):
@@ -72,8 +107,14 @@ def placeTeamWidget(frame, teamNumber):
 def addTeam():
     global teamName_string
     global teams
+    global currentTeam
+
     teamName = teamName_string.get()
     teamNumber = len(teams)
+
+    if currentTeam == -1:
+        currentTeam = teamNumber
+
     teams[teamNumber] = {"name": teamName, "score": tk.IntVar(), "teamFrame": None, "teamScoreElement": None, "out": False}
     teamBoxFrame = tk.Frame(teamBoxesFrame, highlightbackground="blue", highlightthickness=2)
     print(teamBoxFrame)
@@ -95,6 +136,11 @@ def startRound():
 
 
 def startGame():
+    global teams
+    print(currentTeam)
+
+    if currentTeam in teams.keys():
+        teams[currentTeam]["teamFrame"].configure(highlightbackground="yellow")
     return None
 
 
@@ -127,7 +173,8 @@ value_string = tk.StringVar()
 answer_string = tk.StringVar()
 teamName_string = tk.StringVar()
 teams = {}
-
+teamDirection = "asc"
+currentTeam = -1
 
 barFrame = tk.Frame(window, highlightbackground="red", highlightthickness=2)
 barFrame.grid(row=0, column=1, pady=8, padx=8, sticky='nsew')
