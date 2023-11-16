@@ -84,7 +84,24 @@ def checkAnswer(answers, answer):
         wrongAnswer()
 
 
-def eliminateLowestTeam():
+def findRedLineValue():
+    global redLine_string
+
+    highestScore = (0, -1)
+    for key, team in teams.items():
+        print(team)
+        print(highestScore)
+        if not team["out"]:
+            print(team["score"].get() > highestScore[0])
+            if team["score"].get() > highestScore[0]:
+                highestScore = (team["score"].get(), key)
+    if not highestScore[1] == currentTeam:
+        redLine_string.set(str(highestScore[0] - 1 - teams[currentTeam]["score"].get()))
+    else:
+        redLine_string.set("None")
+
+
+def eliminateHighestTeam():
     global teams
     maxScore = (math.inf * -1, -1)
     for key, team in teams.items():
@@ -93,7 +110,7 @@ def eliminateLowestTeam():
         if score > maxScore[0]:
             maxScore = (score, key)
 
-    teams[maxScore[1]]["eliminated"] = True
+    teams[maxScore[1]]["out"] = True
     teams[maxScore[1]]["teamFrame"].configure(highlightbackground="red")
 
 
@@ -131,7 +148,7 @@ def addTeam():
 def startRound():
     global teams
     for _, team in teams.items():
-        if not team["eliminated"]:
+        if not team["out"]:
             team["score"].set(0)
 
 
@@ -168,13 +185,16 @@ window.geometry("700x700")
 window.columnconfigure(0, weight=1)
 window.columnconfigure(1, weight=1)
 
+# region variable-initialisation
 value_progress = tk.IntVar()
 value_string = tk.StringVar()
 answer_string = tk.StringVar()
 teamName_string = tk.StringVar()
+redLine_string = tk.StringVar()
 teams = {}
 teamDirection = "asc"
 currentTeam = -1
+# endregion variable-initialisation
 
 barFrame = tk.Frame(window, highlightbackground="red", highlightthickness=2)
 barFrame.grid(row=0, column=1, pady=8, padx=8, sticky='nsew')
@@ -189,7 +209,7 @@ teamFrame.columnconfigure(0, weight=1)
 teamFrame.columnconfigure(1, weight=1)
 
 teamBoxesFrame = tk.Frame(teamFrame, highlightbackground="yellow", highlightthickness=2)
-teamBoxesFrame.grid(row=2, column=0, columnspan=2, pady=8, padx=8, sticky='nsew')
+teamBoxesFrame.grid(row=3, column=0, columnspan=2, pady=8, padx=8, sticky='nsew')
 teamBoxesFrame.columnconfigure(0, weight=1)
 teamBoxesFrame.columnconfigure(1, weight=1)
 teamBoxesFrame.columnconfigure(2, weight=1)
@@ -209,6 +229,12 @@ progressbar = Progressbar(barFrame, orient=tk.VERTICAL,
                           style="score.Vertical.TProgressbar"
                           )
 progressbar.pack(ipadx=30)
+
+redLineSeparator = Separator(barFrame, orient='horizontal')
+redLineSeparator.place(relx=0.1, rely=0.5, relwidth=1)
+
+redLineLabel = tk.Label(barFrame, textvariable=redLine_string)
+redLineLabel.place(relx=0.1, rely=0.5)
 
 buttonReset = tk.Button(barFrame, text="Reset", command=setMaxProgress)
 buttonReset.pack()
@@ -234,7 +260,10 @@ buttonAddTeam.grid(column=0, row=1, pady=8, padx=8)
 buttonStartGame = tk.Button(teamFrame, text="Start Game", command=startGame)
 buttonStartGame.grid(column=1, row=0, pady=8, padx=8)
 
-buttonEliminateTeam = tk.Button(teamFrame, text="Eliminate Team", command=eliminateLowestTeam)
+buttonEliminateTeam = tk.Button(teamFrame, text="Eliminate Team", command=eliminateHighestTeam)
 buttonEliminateTeam.grid(column=1, row=1, pady=8, padx=8)
+
+buttonDisplayRedLine = tk.Button(teamFrame, text="Display Red Line", command=findRedLineValue)
+buttonDisplayRedLine.grid(column=1, row=2, pady=8, padx=8)
 
 window.mainloop()
