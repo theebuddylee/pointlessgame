@@ -230,11 +230,11 @@ progressbar = Progressbar(barFrame, orient=tk.VERTICAL,
                           )
 progressbar.pack(ipadx=30)
 
-redLineSeparator = Separator(barFrame, orient='horizontal')
-redLineSeparator.place(relx=0.1, rely=0.5, relwidth=1)
+redLineFrame = tk.Frame(barFrame, background="red", height=1)
+redLineFrame.place(relx=0.1, rely=0.5, relwidth=1)
 
 redLineLabel = tk.Label(barFrame, textvariable=redLine_string)
-redLineLabel.place(relx=0.1, rely=0.5)
+redLineLabel.place(relx=0.05, rely=0.5)
 
 buttonReset = tk.Button(barFrame, text="Reset", command=setMaxProgress)
 buttonReset.pack()
@@ -266,4 +266,11 @@ buttonEliminateTeam.grid(column=1, row=1, pady=8, padx=8)
 buttonDisplayRedLine = tk.Button(teamFrame, text="Display Red Line", command=findRedLineValue)
 buttonDisplayRedLine.grid(column=1, row=2, pady=8, padx=8)
 
+window.update()
+print(progressbar.winfo_width(), progressbar.winfo_x())
+print(progressbar.winfo_height(), progressbar.winfo_y())
+print(progressbar.winfo_geometry())
+
 window.mainloop()
+
+
