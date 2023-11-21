@@ -97,8 +97,26 @@ def findRedLineValue():
                 highestScore = (team["score"].get(), key)
     if not highestScore[1] == currentTeam:
         redLine_string.set(str(highestScore[0] - 1 - teams[currentTeam]["score"].get()))
+        return highestScore[0] - 1 - teams[currentTeam]["score"].get()
     else:
         redLine_string.set("None")
+        return None
+
+
+def placeRedLine():
+    global redLineFrame
+    global progressbar
+
+    window.update()
+
+    value = findRedLineValue()
+    if value is not None:
+        yVal = progressbar.winfo_y() + (((100 - value) / 100) * progressbar.winfo_height())
+        print(progressbar.winfo_y(), progressbar.winfo_height())
+        print(value, yVal)
+        redLineFrame.place(relx=0.2, y=yVal, relwidth=0.7)
+        redLineLabel.place(relx=0.05, y=yVal)
+
 
 
 def eliminateHighestTeam():
@@ -231,10 +249,8 @@ progressbar = Progressbar(barFrame, orient=tk.VERTICAL,
 progressbar.pack(ipadx=30)
 
 redLineFrame = tk.Frame(barFrame, background="red", height=1)
-redLineFrame.place(relx=0.1, rely=0.5, relwidth=1)
 
 redLineLabel = tk.Label(barFrame, textvariable=redLine_string)
-redLineLabel.place(relx=0.05, rely=0.5)
 
 buttonReset = tk.Button(barFrame, text="Reset", command=setMaxProgress)
 buttonReset.pack()
@@ -263,7 +279,7 @@ buttonStartGame.grid(column=1, row=0, pady=8, padx=8)
 buttonEliminateTeam = tk.Button(teamFrame, text="Eliminate Team", command=eliminateHighestTeam)
 buttonEliminateTeam.grid(column=1, row=1, pady=8, padx=8)
 
-buttonDisplayRedLine = tk.Button(teamFrame, text="Display Red Line", command=findRedLineValue)
+buttonDisplayRedLine = tk.Button(teamFrame, text="Display Red Line", command=placeRedLine)
 buttonDisplayRedLine.grid(column=1, row=2, pady=8, padx=8)
 
 window.update()
