@@ -15,21 +15,22 @@ def loadQuestionJSON(filename, round):
     file.close()
 
 
-def setMaxProgress():
+def setMaxProgress(initial=False):
     global value_progress
     global value_string
     global answer_string
     global s
-    global redLineFrame
-    global progressbar
 
     value_progress.set(100)
     value_string.set("100")
     answer_string.set("")
     s.configure("score.Vertical.TProgressbar", foreground='blue', background='blue')
 
-    redLineFrame.place_forget()
-    redLineLabel.place_forget()
+    if not initial:
+        global redLineFrame
+        global redLineLabel
+        redLineFrame.place_forget()
+        redLineLabel.place_forget()
     
 
 def nextTeam():
@@ -59,7 +60,9 @@ def nextTeam():
 
 def setScore(score):
     global teams
-    teams[currentTeam]["score"].set(score)
+    scoreVar = teams[currentTeam]["score"]
+    newScore = scoreVar.get() + score
+    teams[currentTeam]["score"].set(newScore)
     nextTeam()
 
 
@@ -117,11 +120,12 @@ def placeRedLine():
 
     value = findRedLineValue()
     if value is not None:
-        yVal = progressbar.winfo_y() + (((100 - value) / 100) * progressbar.winfo_height())
+        # Adding 3px to this to account for borders
+        yVal = progressbar.winfo_y() + (((100 - value) / 100) * progressbar.winfo_height()) + 3
         print(progressbar.winfo_y(), progressbar.winfo_height())
         print(value, yVal)
         redLineFrame.place(relx=0.2, y=yVal, relwidth=0.7)
-        redLineLabel.place(relx=0.05, y=yVal)
+        redLineLabel.place(relx=0.05, y=(yVal - 10))
 
 
 
@@ -256,10 +260,7 @@ s = Style()
 s.theme_use('clam')
 s.configure("score.Vertical.TProgressbar", foreground='blue', background='blue')
 
-redLineFrame = tk.Frame(barFrame, background="red", height=1)
-redLineLabel = tk.Label(barFrame, textvariable=redLine_string)
-
-setMaxProgress()
+setMaxProgress(initial=True)
 
 progressbar = Progressbar(barFrame, orient=tk.VERTICAL,
                           length=400, mode="determinate",
@@ -267,6 +268,9 @@ progressbar = Progressbar(barFrame, orient=tk.VERTICAL,
                           style="score.Vertical.TProgressbar"
                           )
 progressbar.pack(ipadx=30)
+
+redLineFrame = tk.Frame(barFrame, background="red", height=1)
+redLineLabel = tk.Label(barFrame, textvariable=redLine_string)
 
 buttonReset = tk.Button(barFrame, text="Reset", command=setMaxProgress)
 buttonReset.pack()
