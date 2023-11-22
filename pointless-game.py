@@ -20,10 +20,16 @@ def setMaxProgress():
     global value_string
     global answer_string
     global s
+    global redLineFrame
+    global progressbar
+
     value_progress.set(100)
     value_string.set("100")
     answer_string.set("")
     s.configure("score.Vertical.TProgressbar", foreground='blue', background='blue')
+
+    redLineFrame.place_forget()
+    redLineLabel.place_forget()
     
 
 def nextTeam():
@@ -179,12 +185,23 @@ def startGame():
     return None
 
 
-answers = {"red": 57, "green": 24, "yellow": 9, "white": 4}
+answers = {
+            "red": 57,
+            "orange": 33,
+            "blue": 32,
+            "black": 31,
+            "green": 24,
+            "yellow": 9,
+            "white": 4
+        }
 data = {
     1: {
         "question": "",
         "answers": {
             "red": 57,
+            "orange": 33,
+            "blue": 32,
+            "black": 31,
             "green": 24,
             "yellow": 9,
             "white": 4
@@ -239,6 +256,9 @@ s = Style()
 s.theme_use('clam')
 s.configure("score.Vertical.TProgressbar", foreground='blue', background='blue')
 
+redLineFrame = tk.Frame(barFrame, background="red", height=1)
+redLineLabel = tk.Label(barFrame, textvariable=redLine_string)
+
 setMaxProgress()
 
 progressbar = Progressbar(barFrame, orient=tk.VERTICAL,
@@ -247,10 +267,6 @@ progressbar = Progressbar(barFrame, orient=tk.VERTICAL,
                           style="score.Vertical.TProgressbar"
                           )
 progressbar.pack(ipadx=30)
-
-redLineFrame = tk.Frame(barFrame, background="red", height=1)
-
-redLineLabel = tk.Label(barFrame, textvariable=redLine_string)
 
 buttonReset = tk.Button(barFrame, text="Reset", command=setMaxProgress)
 buttonReset.pack()
