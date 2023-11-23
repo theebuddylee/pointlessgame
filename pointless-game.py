@@ -20,7 +20,7 @@ def setMaxProgress(initial=False):
     global value_string
     global answer_string
     global s
-
+    
     value_progress.set(100)
     value_string.set("100")
     answer_string.set("")
@@ -29,8 +29,10 @@ def setMaxProgress(initial=False):
     if not initial:
         global redLineFrame
         global redLineLabel
+        global buttonS
         redLineFrame.place_forget()
         redLineLabel.place_forget()
+        buttonS["state"] = "normal"
     
 
 def nextTeam():
@@ -84,9 +86,11 @@ def wrongAnswer():
 
 def checkAnswer(answers, answer):
     global teams
+    global buttonS
 
     answer = answer.lower()
     time.sleep(2)
+    buttonS["state"] = "disabled"
     if answer in answers:
         countDown(answers[answer])
     else:
@@ -173,19 +177,32 @@ def addTeam():
     teams[teamNumber]["teamScoreElement"] = teamBoxFrame
 
 
-def startRound():
+def displayQuestionText():
+    global question_string
+
+    question_string.set(data[round_number.get()]["question"])
+
+
+def startRound(roundNumber):
     global teams
     for _, team in teams.items():
         if not team["out"]:
             team["score"].set(0)
+        
+    question_string.set(data[roundNumber]["topic"])
 
 
 def startGame():
     global teams
+    global round_number
     print(currentTeam)
 
     if currentTeam in teams.keys():
         teams[currentTeam]["teamFrame"].configure(highlightbackground="yellow")
+    
+    round_number.set(1)
+    startRound(round_number.get())
+
     return None
 
 
@@ -200,7 +217,8 @@ answers = {
         }
 data = {
     1: {
-        "question": "",
+        "topic": "Topic 1",
+        "question": "Question 1",
         "answers": {
             "red": 57,
             "orange": 33,
@@ -211,12 +229,59 @@ data = {
             "white": 4
         }
     },
-    2: {},
-    3: {},
-    4: {},
-    5: {}
+    2: {
+        "topic": "Topic 2",
+        "question": "Question 2",
+        "answers": {
+            "red": 57,
+            "orange": 33,
+            "blue": 32,
+            "black": 31,
+            "green": 24,
+            "yellow": 9,
+            "white": 4
+        }
+    },
+    3: {
+        "topic": "Topic 3",
+        "question": "Question 3",
+        "answers": {
+            "red": 57,
+            "orange": 33,
+            "blue": 32,
+            "black": 31,
+            "green": 24,
+            "yellow": 9,
+            "white": 4
+        }
+    },
+    4: {
+        "topic": "Topic 4",
+        "question": "Question 4",
+        "answers": {
+            "red": 57,
+            "orange": 33,
+            "blue": 32,
+            "black": 31,
+            "green": 24,
+            "yellow": 9,
+            "white": 4
+        }
+    },
+    5: {
+        "topic": "Topic 5",
+        "question": "Question 5",
+        "answers": {
+            "red": 57,
+            "orange": 33,
+            "blue": 32,
+            "black": 31,
+            "green": 24,
+            "yellow": 9,
+            "white": 4
+        }
+    }
 }
-numberOfTeams = 5
 
 window = tk.Tk()
 window.geometry("700x700")
@@ -230,9 +295,12 @@ value_string = tk.StringVar()
 answer_string = tk.StringVar()
 teamName_string = tk.StringVar()
 redLine_string = tk.StringVar()
+question_string = tk.StringVar()
+round_number = tk.IntVar()
 teams = {}
 teamDirection = "asc"
 currentTeam = -1
+rounds = 5
 # endregion variable-initialisation
 
 barFrame = tk.Frame(window, highlightbackground="red", highlightthickness=2)
@@ -275,7 +343,7 @@ redLineLabel = tk.Label(barFrame, textvariable=redLine_string)
 buttonReset = tk.Button(barFrame, text="Reset", command=setMaxProgress)
 buttonReset.pack()
 
-labelQuestion = tk.Label(textFrame, text="Name a colour on the flag of Suriname")
+labelQuestion = tk.Label(textFrame, textvariable=question_string)
 labelQuestion.pack()
 
 labelAnswer = tk.Label(textFrame, text="Answer")
@@ -286,6 +354,9 @@ answerField.pack()
 
 buttonS = tk.Button(textFrame, text="Check Answer", command=lambda: checkAnswer(answers, answer_string.get()))
 buttonS.pack()
+
+buttonDisplayQuestion = tk.Button(textFrame, text="Display Question", command=displayQuestionText)
+buttonDisplayQuestion.pack(padx=8, pady=8)
 
 teamEntry = tk.Entry(teamFrame, textvariable=teamName_string, width=40)
 teamEntry.grid(column=0, row=0, pady=8, padx=8)
