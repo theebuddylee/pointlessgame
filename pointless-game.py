@@ -58,9 +58,16 @@ def loadAllQuestions():
         round += 1
         loadQuestionJSON(questionDir + h2hFileNames[i], round)
     jackpotRound = round + 1
+    round += 1
+    data[round] = {
+        "type": "jackpotIntro",
+        "topic": "Jackpot Round",
+        "topics": []
+    }
     for i in range(len(jackpotFileNames)):
         round += 1
         loadQuestionJSON(questionDir + jackpotFileNames[i], round)
+        data[jackpotRound]["topics"].append(data[round]["topic"])
 
 
 def getRoundAnswers():
@@ -76,6 +83,9 @@ def setMaxProgress(initial=False):
     global value_string
     global answer_string
     global s
+    global reset_flag
+
+    reset_flag = True
     
     value_progress.set(100)
     value_string.set("100")
@@ -116,16 +126,19 @@ def nextTeam():
     teams[currentTeam]["teamFrame"].configure(highlightbackground="yellow")
 
 
-def setScore(score, nextTeam):
+def setScore(score, nextTeamFlag):
     global teams
     scoreVar = teams[currentTeam]["score"]
     newScore = scoreVar.get() + score
     teams[currentTeam]["score"].set(newScore)
-    if nextTeam: nextTeam()
+    if nextTeamFlag: nextTeam()
 
 
 def countDown(stopPoint, nextTeam=True):
     global value_string
+    global reset_flag
+
+    reset_flag = False
     progress = value_progress.get()
     value_string.set(str(progress))
     if progress != stopPoint:
@@ -135,11 +148,11 @@ def countDown(stopPoint, nextTeam=True):
         setScore(stopPoint, nextTeam)
 
 
-def wrongAnswer():
+def wrongAnswer(nextTeam=True):
     global value_string
     s.configure("score.Vertical.TProgressbar", foreground='red', background='red')
     value_string.set("X")
-    setScore(100)
+    setScore(100, nextTeam)
     
 
 def checkAnswer(answers, answer):
@@ -200,8 +213,13 @@ def eliminateHighestTeam():
         if score > maxScore[0]:
             maxScore = (score, key)
 
-    teams[maxScore[1]]["out"] = True
-    teams[maxScore[1]]["teamFrame"].configure(highlightbackground="red")
+    eliminateTeam(maxScore[1])
+
+
+def eliminateTeam(teamIndex):
+    global teams
+    teams[teamIndex]["out"] = True
+    teams[teamIndex]["teamFrame"].configure(highlightbackground="red")
 
 
 def placeTeamWidget(frame, teamNumber):
@@ -238,6 +256,7 @@ def addTeam():
 def checkH2HAnswer(answer, entry, points):
     print(answer, entry, points)
     if answer == entry.lower():
+        time.sleep(2)
         countDown(points, False)
     else:
         wrongAnswer()
@@ -269,6 +288,7 @@ def displayClues():
     global data
     global round_number
     global question_string
+    global clueObjects
 
     question_string.set(data[round_number]["question"])
     questions = data[round_number]["questions"]
@@ -288,13 +308,56 @@ def scoreH2HRound():
         if not team["out"]:
             if team["score"].get() < lowestScore[0]:
                 lowestScore = (team["score"].get(), key)
-                team["score"].set(0)
+            team["score"].set(0)
     teams[lowestScore[1]]["h2hScore"].set(teams[lowestScore[1]]["h2hScore"].get() + 1)
 
+    # Eliminate other teams if a team gets 3 h2h wins
+    if teams[lowestScore[1]]["h2hScore"].get() == 3:
+        for key, team in teams.items():
+            if key != lowestScore[1]:
+                eliminateTeam(key)
 
 
 def displayJackpot():
+    print("jackpot")
     return None
+
+
+def offsetRoundNumber(offset):
+    global round_number
+    global jackpotIntroElements
+    print("offsetRoundNumber")
+
+    offset = int(offset)
+    round_number += offset
+    for element in jackpotIntroElements:
+        element.pack_forget()
+
+    startRound(round_number)
+
+
+def displayJackpotIntro():
+    global question_string
+    global data
+    global jackpotIntroElements
+
+    print("displayJackpotIntro")
+    print(data[round_number])
+
+    question_string.set(data[round_number]["topic"])
+    for topic in data[round_number]["topics"]:
+        print(topic)
+        topicLabel = tk.Label(textFrame, text=topic)
+        jackpotIntroElements.append(topicLabel)
+        topicLabel.pack()
+
+    roundOffset = tk.StringVar()
+    topicChoice = tk.Entry(textFrame, textvariable=roundOffset)
+    topicChoice.pack()
+    topicButton = tk.Button(textFrame, text="Submit", command=lambda: offsetRoundNumber(roundOffset.get()))
+    topicButton.pack()
+    jackpotIntroElements.append(topicChoice)
+    jackpotIntroElements.append(topicButton)
 
 
 def displayQuestionText():
@@ -311,18 +374,30 @@ def displayQuestionText():
         buttonS.pack()
     elif roundType == "h2h":
         displayClues()
-    else:
+    elif roundType == "jackpot":
         displayJackpot()
+    else:
+        displayJackpotIntro()
 
 
 def nextRound():
     global labelAnswer
     global answerField
     global buttonS
+    global clueObjects
+    global round_number
 
     labelAnswer.pack_forget()
     answerField.pack_forget()
     buttonS.pack_forget()
+    for key, clueObject in clueObjects.items():
+        clueObject["frame"].pack_forget()
+        clueObject["label"].pack_forget()
+        clueObject["entry"].pack_forget()
+        clueObject["button"].pack_forget()
+
+    round_number += 1
+    startRound(round_number)
 
     return None
 
@@ -333,8 +408,11 @@ def endRound():
 
 def startJackpot():
     global round_number
+    print("startJackpot")
 
     round_number = jackpotRound
+    print(data[round_number])
+    startRound(round_number)
     return None
 
 
@@ -342,15 +420,17 @@ def startRound(roundNumber):
     global teams
     global roundType
     global roundData
+    print("startRound", roundNumber)
+
+    setMaxProgress()
 
     for _, team in teams.items():
         if not team["out"]:
             team["score"].set(0)
         
-    question_string.set(data[round_number]["topic"])
-    roundType = data[round_number]["type"]
-    roundData = data[round_number]
-
+    question_string.set(data[roundNumber]["topic"])
+    roundType = data[roundNumber]["type"]
+    roundData = data[roundNumber]
 
 
 def startGame():
@@ -386,6 +466,7 @@ answer_string = tk.StringVar()
 teamName_string = tk.StringVar()
 redLine_string = tk.StringVar()
 question_string = tk.StringVar()
+reset_flag = tk.BooleanVar()
 round_number = 0
 teams = {}
 teamDirection = "asc"
@@ -396,6 +477,8 @@ jackpotRound = 0  # Start of jackpot round for jumping straight to it
 h2hRound = 0  # Start of head-to-head round for determining question type
 roundType = "guess"  # Type of round, guess, h2h, jackpot
 roundData = None
+clueObjects = {}
+jackpotIntroElements = []
 # endregion variable-initialisation
 
 loadAllQuestions()
@@ -449,7 +532,7 @@ redLineFrame = tk.Frame(barFrame, background="red", height=1)
 redLineLabel = tk.Label(barFrame, textvariable=redLine_string)
 
 buttonReset = tk.Button(barFrame, text="Reset", command=setMaxProgress)
-buttonReset.pack()
+buttonReset.pack(padx=8, pady=8)
 
 labelQuestion = tk.Label(textFrame, textvariable=question_string)
 labelQuestion.pack()
@@ -487,6 +570,9 @@ buttonEndRound.grid(column=0, row=5, pady=8, padx=8)
 
 buttonScoreH2HRound = tk.Button(controlFrame, text="Score H2H Round", command=scoreH2HRound)
 buttonScoreH2HRound.grid(column=1, row=1, pady=8, padx=8)
+
+buttonNextTeam = tk.Button(controlFrame, text="Next Team", command=nextTeam)
+buttonNextTeam.grid(column=1, row=2, pady=8, padx=8)
 
 window.update()
 print(progressbar.winfo_width(), progressbar.winfo_x())
