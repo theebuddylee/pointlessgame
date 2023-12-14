@@ -10,7 +10,6 @@ questionDir = "D:/Programming/Python Programs/pointless/data/questions/"
 roundFileNames = [
     "round-1-answers.json",
     "round-2-answers.json",
-    "round-3-answers.json",  # Maybe delete this round based on number of teams taking part
     "round-4-answers.json"
 ]
 h2hFileNames = [
@@ -51,24 +50,24 @@ def loadAllQuestions():
 
     round = 0
 
-    for i in range(len(roundFileNames)):
-        round += 1
-        loadQuestionJSON(questionDir + roundFileNames[i], round)
-    h2hRound = round + 1
-    for i in range(len(h2hFileNames)):
-        round += 1
-        loadQuestionJSON(questionDir + h2hFileNames[i], round)
-    jackpotRound = round + 1
-    round += 1
-    data[round] = {
-        "type": "jackpotIntro",
-        "topic": "Jackpot Round",
-        "topics": []
-    }
-    for i in range(len(jackpotFileNames)):
-        round += 1
-        loadQuestionJSON(questionDir + jackpotFileNames[i], round)
-        data[jackpotRound]["topics"].append(data[round]["topic"])
+    # for i in range(len(roundFileNames)):
+    #     round += 1
+    #     loadQuestionJSON(questionDir + roundFileNames[i], round)
+    # h2hRound = round + 1
+    # for i in range(len(h2hFileNames)):
+    #     round += 1
+    #     loadQuestionJSON(questionDir + h2hFileNames[i], round)
+    # jackpotRound = round + 1
+    # round += 1
+    # data[round] = {
+    #     "type": "jackpotIntro",
+    #     "topic": "Jackpot Round",
+    #     "topics": []
+    # }
+    # for i in range(len(jackpotFileNames)):
+    #     round += 1
+    #     loadQuestionJSON(questionDir + jackpotFileNames[i], round)
+    #     data[jackpotRound]["topics"].append(data[round]["topic"])
 
 
 def getRoundAnswers():
@@ -261,11 +260,11 @@ def addTeam():
     teams[teamNumber] = {"name": teamName, "score": tk.IntVar(), "h2hScore": tk.IntVar(), "teamFrame": None, "teamScoreElement": None, "out": False}
     teamBoxFrame = tk.Frame(teamBoxesFrame, highlightbackground="blue", highlightthickness=2)
     placeTeamWidget(teamBoxFrame, teamNumber)
-    teamBoxLabel = tk.Label(teamBoxFrame, text=teamName)
+    teamBoxLabel = tk.Label(teamBoxFrame, text=teamName, font=("Arial", 18))
     teamBoxLabel.pack()
-    teamScoreLabel = tk.Label(teamBoxFrame, textvariable=teams[teamNumber]["score"])
+    teamScoreLabel = tk.Label(teamBoxFrame, textvariable=teams[teamNumber]["score"], font=("Arial", 18))
     teamScoreLabel.pack()
-    teamH2HScoreLabel = tk.Label(teamBoxFrame, textvariable=teams[teamNumber]["h2hScore"])
+    teamH2HScoreLabel = tk.Label(teamBoxFrame, textvariable=teams[teamNumber]["h2hScore"], font=("Arial", 18))
     teamH2HScoreLabel.pack()
     teams[teamNumber]["teamFrame"] = teamBoxFrame
     teams[teamNumber]["teamScoreElement"] = teamBoxFrame
@@ -289,7 +288,7 @@ def createClueObject(clueObjects, index, entryVars):
     clueObjects[index] = {"frame": None, "label": None, "entry": None, "button": None, "buttonFunc": lambda: checkH2HAnswer(questions[index]["answer"], clueObjects[index]["entry"].get(), questions[index]["points"])}
     clueFrame = tk.Frame(textFrame, highlightbackground="purple", highlightthickness=2)
     clueFrame.pack(fill="both", expand=True)
-    clueLabel = tk.Label(clueFrame, text=questions[index]["clue"])
+    clueLabel = tk.Label(clueFrame, text=questions[index]["clue"], font=("Arial", 18))
     clueLabel.pack()
     clueEntry = tk.Entry(clueFrame, textvariable=entryVars[index])
     clueEntry.pack()
@@ -371,7 +370,7 @@ def displayJackpot():
 
     question_string.set(data[round_number]["topic"])
     for question in data[round_number]["questions"]:
-        questionLabel = tk.Label(textFrame, text=question["question"])
+        questionLabel = tk.Label(textFrame, text=question["question"], font=("Arial", 18))
         questionLabel.pack()
 
     jackpotEntryVars = [tk.StringVar() for i in range(3)]
@@ -404,7 +403,7 @@ def displayJackpotIntro():
     question_string.set(data[round_number]["topic"])
     for topic in data[round_number]["topics"]:
         print(topic)
-        topicLabel = tk.Label(textFrame, text=topic)
+        topicLabel = tk.Label(textFrame, text=topic, font=("Arial", 18))
         jackpotIntroElements.append(topicLabel)
         topicLabel.pack()
 
@@ -580,7 +579,7 @@ teamBoxesFrame.columnconfigure(0, weight=1)
 teamBoxesFrame.columnconfigure(1, weight=1)
 teamBoxesFrame.columnconfigure(2, weight=1)
 
-labelProgress = tk.Label(barFrame, textvariable=value_string)
+labelProgress = tk.Label(barFrame, textvariable=value_string, font=("Arial", 18))
 labelProgress.pack()
 
 s = Style()
@@ -597,49 +596,49 @@ progressbar = Progressbar(barFrame, orient=tk.VERTICAL,
 progressbar.pack(ipadx=30)
 
 redLineFrame = tk.Frame(barFrame, background="red", height=1)
-redLineLabel = tk.Label(barFrame, textvariable=redLine_string)
+redLineLabel = tk.Label(barFrame, textvariable=redLine_string, font=("Arial", 18))
 
-buttonReset = tk.Button(barFrame, text="Reset", command=setMaxProgress)
+buttonReset = tk.Button(barFrame, text="Reset", command=setMaxProgress, font=("Arial", 18))
 buttonReset.pack(padx=8, pady=8)
 
-labelQuestion = tk.Label(textFrame, textvariable=question_string)
+labelQuestion = tk.Label(textFrame, textvariable=question_string,font=("Arial", 18))
 labelQuestion.pack()
 
-labelAnswer = tk.Label(textFrame, text="Answer")
-answerField = tk.Entry(textFrame, textvariable=answer_string, width=30)
-buttonS = tk.Button(textFrame, text="Check Answer", command=lambda: checkAnswer(getRoundAnswers(), answer_string.get()))
+labelAnswer = tk.Label(textFrame, text="Answer", font=("Arial", 18))
+answerField = tk.Entry(textFrame, textvariable=answer_string, width=30, font=("Arial", 18))
+buttonS = tk.Button(textFrame, text="Check Answer", command=lambda: checkAnswer(getRoundAnswers(), answer_string.get()), font=("Arial", 18))
 
-buttonDisplayQuestion = tk.Button(controlFrame, text="Display Question", command=displayQuestionText)
+buttonDisplayQuestion = tk.Button(controlFrame, text="Display Question", command=displayQuestionText, font=("Arial", 18))
 buttonDisplayQuestion.grid(row=0, column=1, padx=8, pady=8)
 
-teamEntry = tk.Entry(teamFrame, textvariable=teamName_string, width=40)
+teamEntry = tk.Entry(teamFrame, textvariable=teamName_string, width=40, font=("Arial", 18))
 teamEntry.grid(column=0, row=0, pady=8, padx=8)
 
-buttonAddTeam = tk.Button(teamFrame, text="Add Team", command=addTeam)
+buttonAddTeam = tk.Button(teamFrame, text="Add Team", command=addTeam, font=("Arial", 18))
 buttonAddTeam.grid(column=0, row=1, pady=8, padx=8)
 
-buttonStartGame = tk.Button(controlFrame, text="Start Game", command=startGame)
+buttonStartGame = tk.Button(controlFrame, text="Start Game", command=startGame, font=("Arial", 18))
 buttonStartGame.grid(column=0, row=0, pady=8, padx=8)
 
-buttonEliminateTeam = tk.Button(controlFrame, text="Eliminate Team", command=eliminateHighestTeam)
+buttonEliminateTeam = tk.Button(controlFrame, text="Eliminate Team", command=eliminateHighestTeam, font=("Arial", 18))
 buttonEliminateTeam.grid(column=0, row=1, pady=8, padx=8)
 
-buttonDisplayRedLine = tk.Button(controlFrame, text="Display Red Line", command=placeRedLine)
+buttonDisplayRedLine = tk.Button(controlFrame, text="Display Red Line", command=placeRedLine, font=("Arial", 18))
 buttonDisplayRedLine.grid(column=0, row=2, pady=8, padx=8)
 
-buttonChooseRound = tk.Button(controlFrame, text="Next Round", command=nextRound)
+buttonChooseRound = tk.Button(controlFrame, text="Next Round", command=nextRound, font=("Arial", 18))
 buttonChooseRound.grid(column=0, row=3, pady=8, padx=8)
 
-buttonStartJackpot = tk.Button(controlFrame, text="Start Jackpot", command=startJackpot)
+buttonStartJackpot = tk.Button(controlFrame, text="Start Jackpot", command=startJackpot, font=("Arial", 18))
 buttonStartJackpot.grid(column=0, row=4, pady=8, padx=8)
 
-buttonEndRound = tk.Button(controlFrame, text="End Round", command=endRound)
+buttonEndRound = tk.Button(controlFrame, text="End Round", command=endRound, font=("Arial", 18))
 buttonEndRound.grid(column=0, row=5, pady=8, padx=8)
 
-buttonScoreH2HRound = tk.Button(controlFrame, text="Score H2H Round", command=scoreH2HRound)
+buttonScoreH2HRound = tk.Button(controlFrame, text="Score H2H Round", command=scoreH2HRound, font=("Arial", 18))
 buttonScoreH2HRound.grid(column=1, row=1, pady=8, padx=8)
 
-buttonNextTeam = tk.Button(controlFrame, text="Next Team", command=nextTeam)
+buttonNextTeam = tk.Button(controlFrame, text="Next Team", command=nextTeam, font=("Arial", 18))
 buttonNextTeam.grid(column=1, row=2, pady=8, padx=8)
 
 window.update()
