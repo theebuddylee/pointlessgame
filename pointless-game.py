@@ -10,6 +10,7 @@ questionDir = "D:/Programming/Python Programs/pointless/data/questions/"
 roundFileNames = [
     "round-1-answers.json",
     "round-2-answers.json",
+    "round-3-answers.json",
     "round-4-answers.json"
 ]
 h2hFileNames = [
@@ -50,24 +51,24 @@ def loadAllQuestions():
 
     round = 0
 
-    # for i in range(len(roundFileNames)):
-    #     round += 1
-    #     loadQuestionJSON(questionDir + roundFileNames[i], round)
-    # h2hRound = round + 1
-    # for i in range(len(h2hFileNames)):
-    #     round += 1
-    #     loadQuestionJSON(questionDir + h2hFileNames[i], round)
-    # jackpotRound = round + 1
-    # round += 1
-    # data[round] = {
-    #     "type": "jackpotIntro",
-    #     "topic": "Jackpot Round",
-    #     "topics": []
-    # }
-    # for i in range(len(jackpotFileNames)):
-    #     round += 1
-    #     loadQuestionJSON(questionDir + jackpotFileNames[i], round)
-    #     data[jackpotRound]["topics"].append(data[round]["topic"])
+    for i in range(len(roundFileNames)):
+        round += 1
+        loadQuestionJSON(questionDir + roundFileNames[i], round)
+    h2hRound = round + 1
+    for i in range(len(h2hFileNames)):
+        round += 1
+        loadQuestionJSON(questionDir + h2hFileNames[i], round)
+    jackpotRound = round + 1
+    round += 1
+    data[round] = {
+        "type": "jackpotIntro",
+        "topic": "Jackpot Round",
+        "topics": []
+    }
+    for i in range(len(jackpotFileNames)):
+        round += 1
+        loadQuestionJSON(questionDir + jackpotFileNames[i], round)
+        data[jackpotRound]["topics"].append(data[round]["topic"])
 
 
 def getRoundAnswers():
@@ -177,7 +178,7 @@ def checkAnswer(answers, answer):
     answer = answer.lower()
     time.sleep((random.random()*1.5 + 1))
     buttonS["state"] = "disabled"
-    answersFiltered = [a for a in answers if a["answer"] == answer]
+    answersFiltered = [a for a in answers if a["answer"].lower() == answer]
     if len(answersFiltered) == 1:
         countDown(answersFiltered[0]["points"])
     else:
@@ -240,8 +241,8 @@ def eliminateTeam(teamIndex):
 
 
 def placeTeamWidget(frame, teamNumber):
-    rowNum = teamNumber // 3
-    colNum = teamNumber % 3
+    rowNum = teamNumber // 4
+    colNum = teamNumber % 4
     # print(f"row: {rowNum}, col: {colNum}")
     frame.grid(column=colNum, row=rowNum, pady=8, padx=8, sticky='nsew')
 
@@ -515,6 +516,16 @@ def startGame():
     return None
 
 
+def overrideScore():
+    global override_string
+    global teams
+
+    if override_string.get() != "":
+        overrideScore = int(override_string.get())
+        teams[currentTeam]["score"].set(overrideScore)
+
+
+
 data = {}
 
 window = tk.Tk()
@@ -532,6 +543,7 @@ teamName_string = tk.StringVar()
 redLine_string = tk.StringVar()
 question_string = tk.StringVar()
 reset_flag = tk.BooleanVar()
+override_string = tk.StringVar()
 round_number = 0
 teams = {}
 teamDirection = "asc"
@@ -568,16 +580,17 @@ controlFrame.rowconfigure(4, weight=1)
 controlFrame.rowconfigure(5, weight=1)
 
 teamFrame = tk.Frame(window, highlightbackground="blue", highlightthickness=2)
-teamFrame.grid(row=1, column=0, columnspan=2, pady=8, padx=8, sticky='nsew')
+teamFrame.grid(row=1, column=0, columnspan=3, pady=8, padx=8, sticky='nsew')
 
 teamFrame.columnconfigure(0, weight=1)
 teamFrame.columnconfigure(1, weight=1)
 
 teamBoxesFrame = tk.Frame(teamFrame)
-teamBoxesFrame.grid(row=3, column=0, columnspan=2, pady=8, padx=8, sticky='nsew')
+teamBoxesFrame.grid(row=3, column=0, columnspan=3, pady=8, padx=8, sticky='nsew')
 teamBoxesFrame.columnconfigure(0, weight=1)
 teamBoxesFrame.columnconfigure(1, weight=1)
 teamBoxesFrame.columnconfigure(2, weight=1)
+teamBoxesFrame.columnconfigure(3, weight=1)
 
 labelProgress = tk.Label(barFrame, textvariable=value_string, font=("Arial", 18))
 labelProgress.pack()
@@ -620,7 +633,7 @@ buttonAddTeam.grid(column=0, row=1, pady=8, padx=8)
 buttonStartGame = tk.Button(controlFrame, text="Start Game", command=startGame, font=("Arial", 18))
 buttonStartGame.grid(column=0, row=0, pady=8, padx=8)
 
-buttonEliminateTeam = tk.Button(controlFrame, text="Eliminate Team", command=eliminateHighestTeam, font=("Arial", 18))
+buttonEliminateTeam = tk.Button(controlFrame, text="Eliminate Highest Team", command=eliminateHighestTeam, font=("Arial", 18))
 buttonEliminateTeam.grid(column=0, row=1, pady=8, padx=8)
 
 buttonDisplayRedLine = tk.Button(controlFrame, text="Display Red Line", command=placeRedLine, font=("Arial", 18))
@@ -640,6 +653,12 @@ buttonScoreH2HRound.grid(column=1, row=1, pady=8, padx=8)
 
 buttonNextTeam = tk.Button(controlFrame, text="Next Team", command=nextTeam, font=("Arial", 18))
 buttonNextTeam.grid(column=1, row=2, pady=8, padx=8)
+
+overrideEntry = tk.Entry(controlFrame, textvariable=override_string, width=10, font=("Arial", 18))
+overrideEntry.grid(column=1, row=3, pady=8, padx=8)
+
+overrideScore = tk.Button(controlFrame, text="Override Score", command=overrideScore, font=("Arial", 18))
+overrideScore.grid(column=1, row=4, pady=8, padx=8)
 
 window.update()
 print(progressbar.winfo_width(), progressbar.winfo_x())

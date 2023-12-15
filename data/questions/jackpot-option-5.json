@@ -1,0 +1,221 @@
+{
+	"type": "jackpot",
+	"topic": "Famous Vans",
+	"questions" : [
+		{
+			"question": "Dick Van Dyke",
+			"answers" : [
+				{
+					"answer": "bye bye birdie",
+					"points": 0
+				},
+				{
+					"answer": "chitty chitty bang bang",
+					"points": 31
+				},
+				{
+					"answer": "cold turkey",
+					"points": 0
+				},
+				{
+					"answer": "curious george",
+					"points": 0
+				},
+				{
+					"answer": "dick tracy",
+					"points": 0
+				},
+				{
+					"answer": "divorce american style",
+					"points": 0
+				},
+				{
+					"answer": "fitzwilly",
+					"points": 0
+				},
+				{
+					"answer": "lt. robin crusoe, u.s.n.",
+					"points": 0
+				},
+				{
+					"answer": "mary poppins",
+					"points": 58
+				},
+				{
+					"answer": "never a dull moment",
+					"points": 0
+				},
+				{
+					"answer": "night at the museum",
+					"points": 4
+				},
+				{
+					"answer": "some kind of a nut",
+					"points": 0
+				},
+				{
+					"answer": "the art of love",
+					"points": 0
+				},
+				{
+					"answer": "the comic",
+					"points": 0
+				},
+				{
+					"answer": "the runner stumbles",
+					"points": 0
+				},
+				{
+					"answer": "tubby the tuba",
+					"points": 0
+				},
+				{
+					"answer": "what a way to go!",
+					"points": 0
+				}
+			]
+		},
+		{
+			"question": "Robin Van Persie",
+			"answers" : [
+				{
+					"answer": "ac milan",
+					"points": 0
+				},
+				{
+					"answer": "aston villa",
+					"points": 5
+				},
+				{
+					"answer": "blackburn rovers",
+					"points": 0
+				},
+				{
+					"answer": "bolton wanderers",
+					"points": 0
+				},
+				{
+					"answer": "borussia dortmund",
+					"points": 0
+				},
+				{
+					"answer": "chelsea",
+					"points": 20
+				},
+				{
+					"answer": "everton",
+					"points": 4
+				},
+				{
+					"answer": "germany",
+					"points": 0
+				},
+				{
+					"answer": "liverpool",
+					"points": 15
+				},
+				{
+					"answer": "manchester united",
+					"points": 38
+				},
+				{
+					"answer": "newcastle united",
+					"points": 4
+				},
+				{
+					"answer": "northern ireland",
+					"points": 0
+				},
+				{
+					"answer": "norwich city",
+					"points": 1
+				},
+				{
+					"answer": "queens park rangers",
+					"points": 1
+				},
+				{
+					"answer": "san marino",
+					"points": 0
+				},
+				{
+					"answer": "stoke city",
+					"points": 2
+				},
+				{
+					"answer": "sunderland",
+					"points": 1
+				},
+				{
+					"answer": "swansea city",
+					"points": 0
+				},
+				{
+					"answer": "tottenham hotspur",
+					"points": 12
+				},
+				{
+					"answer": "udinese",
+					"points": 0
+				},
+				{
+					"answer": "west bromwich albion",
+					"points": 2
+				},
+				{
+					"answer": "wigan athletic",
+					"points": 1
+				},
+				{
+					"answer": "wolverhampton wanderers",
+					"points": 0
+				}
+			]
+		},
+		{
+			"question": "Van Morrison",
+			"answers" : [
+				{
+					"answer": "back on top",
+					"points": 0
+				},
+				{
+					"answer": "bright side of the road",
+					"points": 0
+				},
+				{
+					"answer": "days like this",
+					"points": 0
+				},
+				{
+					"answer": "gloria",
+					"points": 4
+				},
+				{
+					"answer": "have i told you lately",
+					"points": 4
+				},
+				{
+					"answer": "hey mr dj",
+					"points": 0
+				},
+				{
+					"answer": "no religion",
+					"points": 0
+				},
+				{
+					"answer": "precious time",
+					"points": 0
+				},
+				{
+					"answer": "the healing game",
+					"points": 0
+				},
+				{
+					"answer": "whenever god shines his light",
+					"points": 0
+				}
+			]
+		}
+	]
+}

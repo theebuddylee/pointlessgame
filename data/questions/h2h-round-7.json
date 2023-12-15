@@ -1,0 +1,37 @@
+{
+	"type": "h2h",
+	"topic": "Art",
+	"question": "Artworks and their Artists II",
+    "questions": [
+        {
+			"clue": "Orbit (2012)",
+            "answer": "anish kapoor",
+            "points": 0
+        },
+        {
+			"clue": "Mother And Child Divided (1993)",
+            "answer": "damien hirst",
+            "points": 7
+        },
+        {
+			"clue": "My Bed (1998)",
+            "answer": "tracey emin",
+            "points": 39
+        },
+        {
+			"clue": "Statue Of Liberty (1886)",
+            "answer": "frederic augueste bartholdi",
+            "points": 1
+        },
+        {
+			"clue": "Stringed Figure (Curlew), Version II (1956)",
+            "answer": "barbara hepworth",
+            "points": 1
+        },
+        {
+			"clue": "Walking Man (1947)",
+            "answer": "alberto giacometti",
+            "points": 4
+        }
+    ]
+}

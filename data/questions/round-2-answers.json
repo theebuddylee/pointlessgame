@@ -1,0 +1,183 @@
+{
+	"type": "guess",
+	"topic": "Words",
+	"question": "Words ending in 'ROW'",
+    "answers": [
+        {
+            "answer": "arrow",
+            "points": 43
+        },
+        {
+            "answer": "barrow",
+            "points": 40
+        },
+        {
+            "answer": "borrow",
+            "points": 35
+        },
+        {
+            "answer": "brow",
+            "points": 54
+        },
+        {
+            "answer": "burrow",
+            "points": 21
+        },
+        {
+            "answer": "cockcrow",
+            "points": 2
+        },
+        {
+            "answer": "crow",
+            "points": 56
+        },
+        {
+            "answer": "downthrow",
+            "points": 0
+        },
+        {
+            "answer": "escrow",
+            "points": 3
+        },
+        {
+            "answer": "eyebrow",
+            "points": 9
+        },
+        {
+            "answer": "farrow",
+            "points": 14
+        },
+        {
+            "answer": "fencerow",
+            "points": 0
+        },
+        {
+            "answer": "frow",
+            "points": 3
+        },
+        {
+            "answer": "fruitcrow",
+            "points": 0
+        },
+        {
+            "answer": "furrow",
+            "points": 19
+        },
+        {
+            "answer": "grow",
+            "points": 47
+        },
+        {
+            "answer": "harrow",
+            "points": 30
+        },
+        {
+            "answer": "hedgerow",
+            "points": 20
+        },
+        {
+            "answer": "highbrow",
+            "points": 4
+        },
+		{
+            "answer": "intergrow",
+            "points": 0
+        },
+        {
+            "answer": "lowbrow",
+            "points": 2
+        },
+        {
+            "answer": "marrow",
+            "points": 37
+        },
+        {
+            "answer": "middlebrow",
+            "points": 1
+        },
+        {
+            "answer": "monobrow",
+            "points": 1
+        },
+        {
+            "answer": "morrow",
+            "points": 11
+        },
+        {
+            "answer": "narrow",
+            "points": 28
+        },
+        {
+            "answer": "outgrow",
+            "points": 2
+        },
+        {
+            "answer": "overgrow",
+            "points": 1
+        },
+        {
+            "answer": "overthrow",
+            "points": 2
+        },
+        {
+            "answer": "prow",
+            "points": 21
+        },
+        {
+            "answer": "regrow",
+            "points": 2
+        },
+        {
+            "answer": "restharrow",
+            "points": 0
+        },
+        {
+            "answer": "scarecrow",
+            "points": 9
+        },
+        {
+            "answer": "serow",
+            "points": 1
+        },
+        {
+            "answer": "sorrow",
+            "points": 32
+        },
+        {
+            "answer": "sparrow",
+            "points": 13
+        },
+        {
+            "answer": "strow",
+            "points": 2
+        },
+        {
+            "answer": "throw",
+            "points": 25
+        },
+		{
+            "answer": "tomorrow",
+            "points": 32
+        },
+        {
+            "answer": "trow",
+            "points": 7
+        },
+        {
+            "answer": "upthrow",
+            "points": 0
+        },
+        {
+            "answer": "wheelbarrow",
+            "points": 9
+        },
+        {
+            "answer": "windrow",
+            "points": 1
+        },
+        {
+            "answer": "yarrow",
+            "points": 6
+        }
+    ]
+}

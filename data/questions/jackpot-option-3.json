@@ -1,0 +1,127 @@
+{
+	"type": "jackpot",
+	"topic": "Snooker Finalists",
+	"questions" : [
+		{
+			"question": "Losing Snooker World Championship Finalists",
+			"answers" : [
+				{
+					"answer": "alex higgins",
+					"points": 18
+				},
+				{
+					"answer": "ali carter",
+					"points": 0
+				},
+				{
+					"answer": "cliff thorburn",
+					"points": 6
+				},
+				{
+					"answer": "dennis taylor",
+					"points": 3
+				},
+				{
+					"answer": "doug mountjoy",
+					"points": 2
+				},
+				{
+					"answer": "eddie charlton",
+					"points": 0
+				},
+				{
+					"answer": "gary owen",
+					"points": 0
+				},
+				{
+					"answer": "graeme dott",
+					"points": 1
+				},
+				{
+					"answer": "graham miles",
+					"points": 0
+				},
+				{
+					"answer": "jimmy white",
+					"points": 25
+				},
+				{
+					"answer": "joe johnson",
+					"points": 0
+				},
+				{
+					"answer": "john higgins",
+					"points": 7
+				},
+				{
+					"answer": "john parrott",
+					"points": 7
+				},
+				{
+					"answer": "john pulman",
+					"points": 0
+				},
+				{
+					"answer": "john spencer",
+					"points": 0
+				},
+				{
+					"answer": "judd trump",
+					"points": 2
+				},
+				{
+					"answer": "ken doherty",
+					"points": 0
+				},
+				{
+					"answer": "mark selby",
+					"points": 0
+				},
+				{
+					"answer": "mark williams",
+					"points": 1
+				},
+				{
+					"answer": "matthew stevens",
+					"points": 0
+				},
+				{
+					"answer": "nigel bond",
+					"points": 0
+				},
+				{
+					"answer": "perrie mans",
+					"points": 0
+				},
+				{
+					"answer": "peter ebdon",
+					"points": 4
+				},
+				{
+					"answer": "ray reardon",
+					"points": 8
+				},
+				{
+					"answer": "shaun murphy",
+					"points": 0
+				},
+				{
+					"answer": "stephen hendry",
+					"points": 14
+				},
+				{
+					"answer": "steve davis",
+					"points": 42
+				},
+				{
+					"answer": "terry griffiths",
+					"points": 2
+				},
+				{
+					"answer": "warren simpson",
+					"points": 0
+				}
+			]
+		}
+	]
+}

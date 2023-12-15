@@ -1,0 +1,32 @@
+{
+	"type": "h2h",
+	"topic": "Hitchhiker's Guide",
+	"question": "Hitchhiker's Guide to the Galaxy Facts",
+    "questions": [
+        {
+			"clue": "Alien race, known for their awful poetry, who destroy the Earth",
+            "answer": "vogons",
+            "points": 12
+        },
+        {
+			"clue": "Created by this British writer",
+            "answer": "douglas adams",
+            "points": 47
+        },
+        {
+			"clue": "Name of the guitarist in the rock band Disaster Area that features in the series",
+            "answer": "hotblack desiato",
+            "points": 1
+        },
+        {
+			"clue": "Number that is the answer to 'Life, The Universe, and Everything'",
+            "answer": "42",
+            "points": 33
+        },
+        {
+			"clue": "Two words printed on the Guide 'in large friendly letters'",
+            "answer": "don't panic",
+            "points": 18
+        }
+    ]
+}

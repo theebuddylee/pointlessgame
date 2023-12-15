@@ -1,0 +1,311 @@
+{
+	"type": "jackpot",
+	"topic": "Jackson Music",
+	"questions" : [
+		{
+			"question": "Jackson UK Top 40 Singles",
+			"answers" : [
+				{
+					"answer": "abc",
+					"points": 19
+				},
+				{
+					"answer": "ain't no sunshine",
+					"points": 1
+				},
+				{
+					"answer": "another part of me",
+					"points": 0
+				},
+				{
+					"answer": "bad",
+					"points": 31
+				},
+				{
+					"answer": "beat it",
+					"points": 18
+				},
+				{
+					"answer": "ben",
+					"points": 27
+				},
+				{
+					"answer": "billie jean",
+					"points": 43
+				},
+				{
+					"answer": "black or white",
+					"points": 20
+				},
+				{
+					"answer": "blame it on the boogie",
+					"points": 13
+				},
+				{
+					"answer": "blood on the dance floor",
+					"points": 1
+				},
+				{
+					"answer": "can you feel it",
+					"points": 2
+				},
+				{
+					"answer": "come together",
+					"points": 0
+				},
+				{
+					"answer": "cry",
+					"points": 0
+				},
+				{
+					"answer": "destiny",
+					"points": 0
+				},
+				{
+					"answer": "dirty diana",
+					"points": 10
+				},
+				{
+					"answer": "doctor my eyes",
+					"points": 0
+				},
+				{
+					"answer": "don't stop 'til you get enough",
+					"points": 3
+				},
+				{
+					"answer": "dreamer",
+					"points": 0
+				},
+				{
+					"answer": "earth song",
+					"points": 15
+				},
+				{
+					"answer": "even though you're gone",
+					"points": 0
+				},
+				{
+					"answer": "farewell my summer love",
+					"points": 0
+				},
+				{
+					"answer": "get it",
+					"points": 0
+				},
+				{
+					"answer": "ghosts",
+					"points": 0
+				},
+				{
+					"answer": "girl you're so together",
+					"points": 0
+				},
+				{
+					"answer": "give in to me",
+					"points": 0
+				},
+				{
+					"answer": "goin' places",
+					"points": 0
+				},
+				{
+					"answer": "gone too soon",
+					"points": 0
+				},
+				{
+					"answer": "got to be there",
+					"points": 5
+				},
+				{
+					"answer": "hallelujah day",
+					"points": 0
+				},
+				{
+					"answer": "heal the world",
+					"points": 3
+				},
+				{
+					"answer": "history",
+					"points": 2
+				},
+				{
+					"answer": "hold my hand",
+					"points": 0
+				},
+				{
+					"answer": "i just can't stop loving you",
+					"points": 0
+				},
+				{
+					"answer": "i want you back",
+					"points": 6
+				},
+				{
+					"answer": "i'll be there",
+					"points": 0
+				},
+				{
+					"answer": "in the closet",
+					"points": 0
+				},
+				{
+					"answer": "jam",
+					"points": 0
+				},
+				{
+					"answer": "leave me alone",
+					"points": 1
+				},
+				{
+					"answer": "liberian girl",
+					"points": 2
+				},
+				{
+					"answer": "lookin' through the windows",
+					"points": 0
+				},
+				{
+					"answer": "lovely one",
+					"points": 0
+				},
+				{
+					"answer": "mama's pearl",
+					"points": 0
+				},
+				{
+					"answer": "man in the mirror",
+					"points": 22
+				},
+				{
+					"answer": "never can say goodbye",
+					"points": 1
+				},
+				{
+					"answer": "nothin' (that compares 2 u)",
+					"points": 0
+				},
+				{
+					"answer": "off the wall",
+					"points": 4
+				},
+				{
+					"answer": "one day in your life",
+					"points": 2
+				},
+				{
+					"answer": "one more chance",
+					"points": 0
+				},
+				{
+					"answer": "p.y.t (pretty young thing)",
+					"points": 0
+				},
+				{
+					"answer": "remember the time",
+					"points": 0
+				},
+				{
+					"answer": "rock with you",
+					"points": 5
+				},
+				{
+					"answer": "rockin' robin",
+					"points": 11
+				},
+				{
+					"answer": "say say say",
+					"points": 2
+				},
+				{
+					"answer": "scream",
+					"points": 4
+				},
+				{
+					"answer": "shake your body (down to the ground)",
+					"points": 0
+				},
+				{
+					"answer": "she's out of my life",
+					"points": 1
+				},
+				{
+					"answer": "show you the way to go",
+					"points": 0
+				},
+				{
+					"answer": "skywriter",
+					"points": 0
+				},
+				{
+					"answer": "smooth criminal",
+					"points": 12
+				},
+				{
+					"answer": "state of shock",
+					"points": 0
+				},
+				{
+					"answer": "stranger in moscow",
+					"points": 0
+				},
+				{
+					"answer": "the girl is mine",
+					"points": 1
+				},
+				{
+					"answer": "the love you save",
+					"points": 0
+				},
+				{
+					"answer": "the way you make me feel",
+					"points": 3
+				},
+				{
+					"answer": "they don't care about us",
+					"points": 5
+				},
+				{
+					"answer": "thriller",
+					"points": 71
+				},
+				{
+					"answer": "torture",
+					"points": 0
+				},
+				{
+					"answer": "walk right now",
+					"points": 0
+				},
+				{
+					"answer": "wanna be startin' somethin'",
+					"points": 0
+				},
+				{
+					"answer": "who is it",
+					"points": 0
+				},
+				{
+					"answer": "who's lovin' you",
+					"points": 0
+				},
+				{
+					"answer": "why",
+					"points": 0
+				},
+				{
+					"answer": "will you be there",
+					"points": 0
+				},
+				{
+					"answer": "you are not alone",
+					"points": 2
+				},
+				{
+					"answer": "you rock my world",
+					"points": 0
+				}
+			]
+		}
+	]
+}

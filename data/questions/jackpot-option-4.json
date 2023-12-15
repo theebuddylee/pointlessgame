@@ -1,0 +1,147 @@
+{
+	"type": "jackpot",
+	"topic": "London Underground Stations",
+	"questions" : [
+		{
+			"question": "Tube Stations Beginning With 'C'",
+			"answers" : [
+				{
+					"answer": "caledonian road",
+					"points": 0
+				},
+				{
+					"answer": "caledonian road & barnsbury",
+					"points": 0
+				},
+				{
+					"answer": "camden road",
+					"points": 0
+				},
+				{
+					"answer": "camden town",
+					"points": 8
+				},
+				{
+					"answer": "canada water",
+					"points": 3
+				},
+				{
+					"answer": "canary wharf",
+					"points": 8
+				},
+				{
+					"answer": "canning town",
+					"points": 9
+				},
+				{
+					"answer": "cannon street",
+					"points": 8
+				},
+				{
+					"answer": "canonbury",
+					"points": 1
+				},
+				{
+					"answer": "canons park",
+					"points": 0
+				},
+				{
+					"answer": "carpenders park",
+					"points": 0
+				},
+				{
+					"answer": "chalfont & latimer",
+					"points": 0
+				},
+				{
+					"answer": "chalk farm",
+					"points": 3
+				},
+				{
+					"answer": "chancery lane",
+					"points": 6
+				},
+				{
+					"answer": "charing cross",
+					"points": 43
+				},
+				{
+					"answer": "chesham",
+					"points": 2
+				},
+				{
+					"answer": "chigwell",
+					"points": 6
+				},
+				{
+					"answer": "chiswick park",
+					"points": 2
+				},
+				{
+					"answer": "chorleywood",
+					"points": 3
+				},
+				{
+					"answer": "clapham common",
+					"points": 1
+				},
+				{
+					"answer": "clapham junction",
+					"points": 1
+				},
+				{
+					"answer": "clapham north",
+					"points": 0
+				},
+				{
+					"answer": "clapham south",
+					"points": 0
+				},
+				{
+					"answer": "cockfosters",
+					"points": 8
+				},
+				{
+					"answer": "colindale",
+					"points": 3
+				},
+				{
+					"answer": "colliers wood",
+					"points": 0
+				},
+				{
+					"answer": "covent garden",
+					"points": 7
+				},
+				{
+					"answer": "crossharbour",
+					"points": 1
+				},
+				{
+					"answer": "crouch hill",
+					"points": 1
+				},
+				{
+					"answer": "croxley",
+					"points": 0
+				},
+				{
+					"answer": "crystal palace",
+					"points": 0
+				},
+				{
+					"answer": "custom house",
+					"points": 0
+				},
+				{
+					"answer": "cutty sark",
+					"points": 1
+				},
+				{
+					"answer": "cyprus",
+					"points": 0
+				}
+			]
+		}
+	]
+}

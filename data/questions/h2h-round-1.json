@@ -1,0 +1,42 @@
+{
+	"type": "h2h",
+	"topic": "Literature",
+	"question": "Novels with Names in the title I",
+    "questions": [
+        {
+			"clue": "______ (AUSTEN)",
+            "answer": "emma",
+            "points": 31
+        },
+        {
+			"clue": "______ AND THE CHOCOLATE FACTORY (DAHL)",
+            "answer": "charlie",
+            "points": 77
+        },
+        {
+			"clue": "______ OF GREEN GABLES (MONTGOMERY)",
+            "answer": "anne",
+            "points": 66
+        },
+        {
+			"clue": "______ THE OBSCURE (HARDY)",
+            "answer": "jude",
+            "points": 27
+        },
+        {
+			"clue": "______'S CHOICE (STYRON)",
+            "answer": "sophie",
+            "points": 37
+        },
+        {
+			"clue": "______'S ROOM (WOOLF)",
+            "answer": "jacob",
+            "points": 2
+        },
+        {
+			"clue": "______'S WEB (WHITE)",
+            "answer": "charlotte",
+            "points": 53
+        }
+    ]
+}

@@ -1,0 +1,37 @@
+{
+	"type": "h2h",
+	"topic": "Art",
+	"question": "Artworks and their Artists I",
+    "questions": [
+        {
+			"clue": "Angel Of The North (1997-1998)",
+            "answer": "antony gormley",
+            "points": 15
+        },
+        {
+			"clue": "Brillo Soap Pads Box (1964)",
+            "answer": "andy warhol",
+            "points": 18
+        },
+        {
+			"clue": "David (1501-1504)",
+            "answer": "michelangelo",
+            "points": 34
+        },
+        {
+			"clue": "The Discus Thrower (460-450 BC)",
+            "answer": "myron",
+            "points": 0
+        },
+        {
+			"clue": "Little Dancer Aged Fourteen (1880-1881)",
+            "answer": "edgar degas",
+            "points": 6
+        },
+        {
+			"clue": "Lobster Telephone (1936)",
+            "answer": "salvador dali",
+            "points": 9
+        }
+    ]
+}

@@ -1,0 +1,32 @@
+{
+	"type": "h2h",
+	"topic": "Newcastle",
+	"question": "Newcastle Facts",
+    "questions": [
+        {
+			"clue": "Annual half-marathon that starts in Newcastle and ends in South Shields",
+            "answer": "great north run",
+            "points": 52
+        },
+        {
+			"clue": "It was home to this 90s BBC police drama starring Jimmy Nail",
+            "answer": "spender",
+            "points": 11
+        },
+        {
+			"clue": "Name of the largest independent library outside of London",
+            "answer": "lit and phil",
+            "points": 0
+        },
+        {
+			"clue": "Newcastle United FC's bird-like nickname",
+            "answer": "magpies",
+            "points": 59
+        },
+        {
+			"clue": "Year the Tyne Bridge was officially opened",
+            "answer": 1928,
+            "points": 2
+        }
+    ]
+}

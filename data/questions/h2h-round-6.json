@@ -1,0 +1,42 @@
+{
+	"type": "h2h",
+	"topic": "Literature",
+	"question": "Novels with Names in the title II",
+    "questions": [
+        {
+			"clue": "ALIAS ______ (ATWOOD)",
+            "answer": "grace",
+            "points": 3
+        },
+        {
+			"clue": "I, ______ (GRAVES)",
+            "answer": "claudius",
+            "points": 25
+        },
+        {
+			"clue": "LORD ______ (CONRAD)",
+            "answer": "jim",
+            "points": 10
+        },
+        {
+			"clue": "LUCKY ______ (AMIS)",
+            "answer": "jim",
+            "points": 26
+        },
+        {
+			"clue": "MASTER ______ (BAINBRIDGE)",
+            "answer": "georgie",
+            "points": 1
+        },
+        {
+			"clue": "OSCAR AND ______ (CAREY)",
+            "answer": "lucinda",
+            "points": 7
+        },
+        {
+			"clue": "THE ______ PAPERS (AMIS)",
+            "answer": "rachel",
+            "points": 3
+        }
+    ]
+}

@@ -1,0 +1,43 @@
+{
+	"type": "guess",
+	"topic": "Science",
+	"question": "Elements beginning with 'P'",
+    "answers": [
+        {
+            "answer": "palladium",
+            "points": 13
+        },
+        {
+            "answer": "phosphorus",
+            "points": 35
+        },
+        {
+            "answer": "platinum",
+            "points": 29
+        },
+        {
+            "answer": "plutonium",
+            "points": 39
+        },
+        {
+            "answer": "polonium",
+            "points": 9
+        },
+        {
+            "answer": "potassium",
+            "points": 56
+        },
+        {
+            "answer": "praseodymium",
+            "points": 1
+        },
+        {
+            "answer": "promethium",
+            "points": 2
+        },
+        {
+            "answer": "protactinium",
+            "points": 0
+        }
+    ]
+}

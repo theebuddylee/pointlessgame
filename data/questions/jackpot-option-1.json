@@ -1,0 +1,513 @@
+{
+	"type": "jackpot",
+	"topic": "Doctor Who",
+	"questions" : [
+		{
+			"question": "The Master",
+			"answers" : [
+				{
+					"answer": "anthony ainley",
+					"points": 1
+				},
+				{
+					"answer": "derek jacobi",
+					"points": 1
+				},
+				{
+					"answer": "eric roberts",
+					"points": 3
+				},
+				{
+					"answer": "geoffrey beevers",
+					"points": 0
+				},
+				{
+					"answer": "gordon tipple",
+					"points": 0
+				},
+				{
+					"answer": "john simm",
+					"points": 15
+				},
+				{
+					"answer": "peter pratt",
+					"points": 0
+				},
+				{
+					"answer": "roger delgado",
+					"points": 3
+				}
+			]
+		},
+		{
+			"question": "4th Doctor Companions",
+			"answers" : [
+				{
+					"answer": "david brierley",
+					"points": 0
+				},
+				{
+					"answer": "elisabeth sladen",
+					"points": 6
+				},
+				{
+					"answer": "ian marter",
+					"points": 0
+				},
+				{
+					"answer": "janet fielding",
+					"points": 0
+				},
+				{
+					"answer": "john leeson",
+					"points": 0
+				},
+				{
+					"answer": "john levene",
+					"points": 0
+				},
+				{
+					"answer": "lalla ward",
+					"points": 0
+				},
+				{
+					"answer": "louise jameson",
+					"points": 3
+				},
+				{
+					"answer": "mary tamm",
+					"points": 2
+				},
+				{
+					"answer": "matthew waterhouse",
+					"points": 0
+				},
+				{
+					"answer": "nicholas courtney",
+					"points": 1
+				},
+				{
+					"answer": "sarah sutton",
+					"points": 0
+				}
+			]
+		},
+		{
+			"question": "Episode Titles",
+			"answers" : [
+				{
+					"answer": "42",
+					"points": 1
+				},
+				{
+					"answer": "a christmas carol",
+					"points": 0
+				},
+				{
+					"answer": "a good man goes to war",
+					"points": 0
+				},
+				{
+					"answer": "a town called mercy",
+					"points": 0
+				},
+				{
+					"answer": "aliens of london",
+					"points": 0
+				},
+				{
+					"answer": "amy's choice",
+					"points": 0
+				},
+				{
+					"answer": "army of ghosts",
+					"points": 1
+				},
+				{
+					"answer": "asylum of the daleks",
+					"points": 0
+				},
+				{
+					"answer": "bad wolf",
+					"points": 0
+				},
+				{
+					"answer": "blink",
+					"points": 6
+				},
+				{
+					"answer": "boom town",
+					"points": 0
+				},
+				{
+					"answer": "closing time",
+					"points": 0
+				},
+				{
+					"answer": "cold blood",
+					"points": 0
+				},
+				{
+					"answer": "cold war",
+					"points": 0
+				},
+				{
+					"answer": "dalek",
+					"points": 0
+				},
+				{
+					"answer": "daleks in manhattan",
+					"points": 0
+				},
+				{
+					"answer": "day of the moon",
+					"points": 0
+				},
+				{
+					"answer": "dinosaurs on a spaceship",
+					"points": 0
+				},
+				{
+					"answer": "doomsday",
+					"points": 2
+				},
+				{
+					"answer": "evolution of the daleks",
+					"points": 0
+				},
+				{
+					"answer": "father's day",
+					"points": 1
+				},
+				{
+					"answer": "fear her",
+					"points": 1
+				},
+				{
+					"answer": "flesh and stone",
+					"points": 0
+				},
+				{
+					"answer": "forest of the dead",
+					"points": 0
+				},
+				{
+					"answer": "gridlock",
+					"points": 0
+				},
+				{
+					"answer": "hide",
+					"points": 0
+				},
+				{
+					"answer": "human nature",
+					"points": 1
+				},
+				{
+					"answer": "journey to the centre of the tardis",
+					"points": 0
+				},
+				{
+					"answer": "journey's end",
+					"points": 0
+				},
+				{
+					"answer": "last of the time lords",
+					"points": 0
+				},
+				{
+					"answer": "let's kill hitler",
+					"points": 0
+				},
+				{
+					"answer": "love & monsters",
+					"points": 0
+				},
+				{
+					"answer": "midnight",
+					"points": 0
+				},
+				{
+					"answer": "new earth",
+					"points": 0
+				},
+				{
+					"answer": "night terrors",
+					"points": 0
+				},
+				{
+					"answer": "nightmare in silver",
+					"points": 0
+				},
+				{
+					"answer": "partners in crime",
+					"points": 0
+				},
+				{
+					"answer": "planet of the dead",
+					"points": 0
+				},
+				{
+					"answer": "planet of the ood",
+					"points": 0
+				},
+				{
+					"answer": "rise of the cybermen",
+					"points": 0
+				},
+				{
+					"answer": "rose",
+					"points": 2
+				},
+				{
+					"answer": "school reunion",
+					"points": 1
+				},
+				{
+					"answer": "silence in the library",
+					"points": 0
+				},
+				{
+					"answer": "smith and jones",
+					"points": 1
+				},
+				{
+					"answer": "the age of steel",
+					"points": 0
+				},
+				{
+					"answer": "the almost people",
+					"points": 0
+				},
+				{
+					"answer": "the angels take manhattan",
+					"points": 0
+				},
+				{
+					"answer": "the beast below",
+					"points": 0
+				},
+				{
+					"answer": "the bells of saint john",
+					"points": 0
+				},
+				{
+					"answer": "the big bang",
+					"points": 0
+				},
+				{
+					"answer": "the christmas invasion",
+					"points": 0
+				},
+				{
+					"answer": "the crimson horror",
+					"points": 0
+				},
+				{
+					"answer": "the curse of the black spot",
+					"points": 0
+				},
+				{
+					"answer": "the day of the doctor",
+					"points": 8
+				},
+				{
+					"answer": "the doctor dances",
+					"points": 3
+				},
+				{
+					"answer": "the doctor, the widow and the wardrobe",
+					"points": 0
+				},
+				{
+					"answer": "the doctor's daughter",
+					"points": 0
+				},
+				{
+					"answer": "the doctor's wife",
+					"points": 1
+				},
+				{
+					"answer": "the eleventh hour",
+					"points": 1
+				},
+				{
+					"answer": "the empty child",
+					"points": 3
+				},
+				{
+					"answer": "the end of the world",
+					"points": 0
+				},
+				{
+					"answer": "the end of time",
+					"points": 1
+				},
+				{
+					"answer": "the family of blood",
+					"points": 0
+				},
+				{
+					"answer": "the fires of pompeii",
+					"points": 0
+				},
+				{
+					"answer": "the girl in the fireplace",
+					"points": 0
+				},
+				{
+					"answer": "the girl who waited",
+					"points": 0
+				},
+				{
+					"answer": "the god complex",
+					"points": 0
+				},
+				{
+					"answer": "the hungry earth",
+					"points": 0
+				},
+				{
+					"answer": "the idiot's lantern",
+					"points": 0
+				},
+				{
+					"answer": "the impossible astronaut",
+					"points": 0
+				},
+				{
+					"answer": "the impossible planet",
+					"points": 0
+				},
+				{
+					"answer": "the lazarus experiment",
+					"points": 0
+				},
+				{
+					"answer": "the lodger",
+					"points": 0
+				},
+				{
+					"answer": "the long game",
+					"points": 0
+				},
+				{
+					"answer": "the name of the doctor",
+					"points": 1
+				},
+				{
+					"answer": "the next doctor",
+					"points": 3
+				},
+				{
+					"answer": "the pandorica opens",
+					"points": 0
+				},
+				{
+					"answer": "the parting of the ways",
+					"points": 0
+				},
+				{
+					"answer": "the poison sky",
+					"points": 0
+				},
+				{
+					"answer": "the power of three",
+					"points": 0
+				},
+				{
+					"answer": "the rebel flesh",
+					"points": 0
+				},
+				{
+					"answer": "the rings of akhaten",
+					"points": 0
+				},
+				{
+					"answer": "the runaway bride",
+					"points": 1
+				},
+				{
+					"answer": "the satan pit",
+					"points": 0
+				},
+				{
+					"answer": "the shakespeare code",
+					"points": 0
+				},
+				{
+					"answer": "the snowmen",
+					"points": 0
+				},
+				{
+					"answer": "the sontaran stratagem",
+					"points": 0
+				},
+				{
+					"answer": "the sound of durms",
+					"points": 1
+				},
+				{
+					"answer": "the stolen earth",
+					"points": 0
+				},
+				{
+					"answer": "the time of angels",
+					"points": 0
+				},
+				{
+					"answer": "the time of the doctor",
+					"points": 1
+				},
+				{
+					"answer": "the unicorn and the wasp",
+					"points": 0
+				},
+				{
+					"answer": "the unquiet dead",
+					"points": 0
+				},
+				{
+					"answer": "the vampires of venice",
+					"points": 0
+				},
+				{
+					"answer": "the waters of mars",
+					"points": 0
+				},
+				{
+					"answer": "the wedding of river song",
+					"points": 0
+				},
+				{
+					"answer": "tooth and claw",
+					"points": 0
+				},
+				{
+					"answer": "turn left",
+					"points": 0
+				},
+				{
+					"answer": "utopia",
+					"points": 0
+				},
+				{
+					"answer": "victory of the daleks",
+					"points": 0
+				},
+				{
+					"answer": "vincent and the doctor",
+					"points": 0
+				},
+				{
+					"answer": "voyage of the damned",
+					"points": 1
+				},
+				{
+					"answer": "world war three",
+					"points": 0
+				}
+			]
+		}
+	]
+}

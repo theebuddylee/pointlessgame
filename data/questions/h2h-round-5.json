@@ -1,0 +1,32 @@
+{
+	"type": "h2h",
+	"topic": "Music",
+	"question": "Christmas Hits",
+    "questions": [
+        {
+			"clue": "C_R_S_M_S   _N   _M_R_L_N_ (1978)",
+            "answer": "christmas in smurfland",
+            "points": 3
+        },
+        {
+			"clue": "K_L_I_G   _N   T_E _A_E (2009)",
+            "answer": "killing in the name",
+            "points": 18
+        },
+        {
+			"clue": "M_   B_O_B_ (1993)",
+            "answer": "mr blobby",
+            "points": 35
+        },
+        {
+			"clue": "M_R_Y   _H_I_T_A_   E_E_Y_N_ (1985)",
+            "answer": "merry christmas everyone",
+            "points": 57
+        },
+        {
+			"clue": "M_S_L_T_E   _N_   W_N_ (1988)",
+            "answer": "mistletoe and wine",
+            "points": 83
+        }
+    ]
+}
