@@ -1,43 +1,41 @@
 {
-	"type": "guess",
-	"topic": "Science",
-	"question": "Elements beginning with 'P'",
+    "type": "guess",
+    "topic": "Science",
+    "question": "Name celestial bodies in our solar system",
     "answers": [
-        {
-            "answer": "palladium",
-            "points": 13
-        },
-        {
-            "answer": "phosphorus",
-            "points": 35
-        },
-        {
-            "answer": "platinum",
-            "points": 29
-        },
-        {
-            "answer": "plutonium",
-            "points": 39
-        },
-        {
-            "answer": "polonium",
-            "points": 9
-        },
-        {
-            "answer": "potassium",
-            "points": 56
-        },
-        {
-            "answer": "praseodymium",
-            "points": 1
-        },
-        {
-            "answer": "promethium",
-            "points": 2
-        },
-        {
-            "answer": "protactinium",
-            "points": 0
-        }
-    ]
+        {"answer": "Mercury", "points": 60},
+        {"answer": "Venus", "points": 58},
+        {"answer": "Earth", "points": 99},
+        {"answer": "Mars", "points": 90},
+        {"answer": "Jupiter", "points": 80},
+        {"answer": "Saturn", "points": 80},
+        {"answer": "Uranus", "points": 70},
+        {"answer": "Neptune", "points": 50},
+        {"answer": "Pluto", "points": 45},
+        {"answer": "Ceres", "points": 5},
+        {"answer": "Haumea", "points": 5},
+        {"answer": "Makemake", "points": 5},
+        {"answer": "Eris", "points": 5},
+        {"answer": "The Moon", "points": 60},
+        {"answer": "Europa", "points": 7},
+        {"answer": "Io", "points": 7},
+        {"answer": "Ganymede", "points": 7},
+        {"answer": "Callisto", "points": 7},
+        {"answer": "Titan", "points": 7},
+        {"answer": "Enceladus", "points": 7},
+        {"answer": "Mimas", "points": 5},
+        {"answer": "Triton", "points": 7},
+        {"answer": "Charon", "points": 5},
+        {"answer": "Phobos", "points": 5},
+        {"answer": "Deimos", "points": 5},
+        {"answer": "Sun", "points": 95},
+        {"answer": "Asteroid Belt", "points": 10},
+        {"answer": "Kuiper Belt", "points": 7},
+        {"answer": "Oort Cloud", "points": 5},
+        {"answer": "Hygiea", "points": 0},
+        {"answer": "Vesta", "points": 0},
+        {"answer": "Pallas", "points": 0},
+        {"answer": "Bennu", "points": 1},
+        {"answer": "Apophis", "points": 0},
+	]
 }
