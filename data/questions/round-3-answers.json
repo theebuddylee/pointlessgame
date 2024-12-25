@@ -1,90 +1,33 @@
 {
-	"type": "guess",
-	"topic": "Sport",
-	"question": "Olympic Track and Field Disciplines",
+    "type": "guess",
+    "topic": "Sport",
+    "question": "Olympic Track and Field Disciplines",
     "answers": [
-        {
-            "answer": "100m",
-            "points": 44
-        },
-        {   "answer": "110m hurdles",
-            "points": 15
-        },
-        {
-            "answer": "1500m",
-            "points": 18
-        },
-        {
-            "answer": "400m",
-            "points": 32
-        },
-        {
-            "answer": "discus throw",
-            "points": 35
-        },
-        {
-            "answer": "pole vault",
-            "points": 29
-        },
-        {
-            "answer": "high jump",
-            "points": 55
-        },
-        {
-            "answer": "javelin throw",
-            "points": 58
-        },
-        {
-            "answer": "long jump",
-            "points": 61
-        },
-        {
-            "answer": "shot put",
-            "points": 34
-        },
-        {
-            "answer": "100m hurdles",
-            "points": 6
-        },
-        {
-            "answer": "200m",
-            "points": 9
-        },
-        {
-            "answer": "800m",
-            "points": 24
-        },
-        {
-            "answer": "200m swim",
-            "points": 1
-        },
-        {
-            "answer": "3000m run",
-            "points": 0
-        },
-        {
-            "answer": "fencing",
-            "points": 11
-        },
-        {
-            "answer": "riding",
-            "points": 9
-        },
-        {
-            "answer": "shooting",
-            "points": 26
-        },
-        {
-            "answer": "10000m run",
-            "points": 1
-        },
-		{
-            "answer": "1500m swim",
-            "points": 1
-        },
-        {
-            "answer": "40000m cycle",
-            "points": 0
-        }
+        {"answer": "100m", "points": 44},
+        {"answer": "200m", "points": 9},
+        {"answer": "400m", "points": 32},
+        {"answer": "800m", "points": 24},
+        {"answer": "1500m", "points": 18},
+        {"answer": "5000m", "points": 16},
+        {"answer": "10000m", "points": 14},
+        {"answer": "marathon", "points": 12},
+        {"answer": "110m hurdles", "points": 15},
+        {"answer": "400m hurdles", "points": 20},
+        {"answer": "3000m steeplechase", "points": 22},
+        {"answer": "4x100m relay", "points": 20},
+        {"answer": "4x400m relay", "points": 18},
+        {"answer": "high jump", "points": 55},
+        {"answer": "pole vault", "points": 29},
+        {"answer": "long jump", "points": 61},
+        {"answer": "triple jump", "points": 27},
+        {"answer": "shot put", "points": 34},
+        {"answer": "discus throw", "points": 35},
+        {"answer": "hammer throw", "points": 20},
+        {"answer": "javelin throw", "points": 48},
+        {"answer": "decathlon", "points": 25},
+        {"answer": "heptathlon", "points": 16},
+        {"answer": "20km walk", "points": 1},
+        {"answer": "50km walk", "points": 0}
     ]
 }
+
