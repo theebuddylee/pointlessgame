@@ -1,175 +1,51 @@
 {
-	"type": "guess",
-	"topic": "Geography",
-	"question": "Landlocked Countries",
+    "type": "guess",
+    "topic": "Geography",
+    "question": "Landlocked Countries",
     "answers": [
-        {
-            "answer": "afghanistan",
-            "points": 6
-        },
-        {
-            "answer": "andorra",
-            "points": 11
-        },
-        {
-            "answer": "armenia",
-            "points": 1
-        },
-        {
-            "answer": "austria",
-            "points": 30
-        },
-        {
-            "answer": "azerbaijan",
-            "points": 1
-        },
-        {
-            "answer": "belarus",
-            "points": 5
-        },
-        {
-            "answer": "bhutan",
-            "points": 1
-        },
-        {
-            "answer": "bolivia",
-            "points": 6
-        },
-        {
-            "answer": "botswana",
-            "points": 2
-        },
-        {
-            "answer": "burkina faso",
-            "points": 0
-        },
-        {
-            "answer": "burundi",
-            "points": 1
-        },
-        {
-            "answer": "central african republic",
-            "points": 2
-        },
-        {
-            "answer": "chad",
-            "points": 7
-        },
-        {
-            "answer": "czech republic",
-            "points": 9
-        },
-        {
-            "answer": "ethiopia",
-            "points": 0
-        },
-        {
-            "answer": "hungary",
-            "points": 14
-        },
-        {
-            "answer": "kazakhstan",
-            "points": 1
-        },
-        {
-            "answer": "kyrgyzstan",
-            "points": 2
-        },
-        {
-            "answer": "laos",
-            "points": 2
-        },
-		{
-            "answer": "lesotho",
-            "points": 2
-        },
-        {
-            "answer": "liechtenstein",
-            "points": 7
-        },
-        {
-            "answer": "luxembourg",
-            "points": 29
-        },
-        {
-            "answer": "macedonia",
-            "points": 2
-        },
-        {
-            "answer": "malawi",
-            "points": 4
-        },
-        {
-            "answer": "mali",
-            "points": 5
-        },
-        {
-            "answer": "moldova",
-            "points": 0
-        },
-        {
-            "answer": "mongolia",
-            "points": 5
-        },
-        {
-            "answer": "nepal",
-            "points": 13
-        },
-        {
-            "answer": "niger",
-            "points": 4
-        },
-        {
-            "answer": "paraguay",
-            "points": 5
-        },
-        {
-            "answer": "rwanda",
-            "points": 3
-        },
-        {
-            "answer": "san marino",
-            "points": 2
-        },
-        {
-            "answer": "serbia",
-            "points": 4
-        },
-        {
-            "answer": "slovakia",
-            "points": 9
-        },
-        {
-            "answer": "swaziland",
-            "points": 1
-        },
-        {
-            "answer": "switzerland",
-            "points": 48
-        },
-        {
-            "answer": "tajikistan",
-            "points": 2
-        },
-        {
-            "answer": "turkmenistan",
-            "points": 1
-        },
-		{
-            "answer": "uganda",
-            "points": 3
-        },
-        {
-            "answer": "uzbekistan",
-            "points": 2
-        },
-        {
-            "answer": "zambia",
-            "points": 6
-        },
-        {
-            "answer": "zimbabwe",
-            "points": 6
-        }
+        {"answer": "afghanistan", "points": 6},
+        {"answer": "andorra", "points": 11},
+        {"answer": "armenia", "points": 1},
+        {"answer": "austria", "points": 30},
+        {"answer": "azerbaijan", "points": 6},
+        {"answer": "belarus", "points": 5},
+        {"answer": "bhutan", "points": 1},
+        {"answer": "bolivia", "points": 6},
+        {"answer": "botswana", "points": 2},
+        {"answer": "burkina faso", "points": 0},
+        {"answer": "burundi", "points": 1},
+        {"answer": "central african republic", "points": 0},
+        {"answer": "chad", "points": 7},
+        {"answer": "czech republic", "points": 19},
+        {"answer": "ethiopia", "points": 1},
+        {"answer": "hungary", "points": 14},
+        {"answer": "kazakhstan", "points": 1},
+        {"answer": "kyrgyzstan", "points": 2},
+        {"answer": "laos", "points": 2},
+        {"answer": "lesotho", "points": 2},
+        {"answer": "liechtenstein", "points": 7},
+        {"answer": "luxembourg", "points": 29},
+        {"answer": "moldova", "points": 0},
+        {"answer": "mongolia", "points": 5},
+        {"answer": "nepal", "points": 13},
+        {"answer": "niger", "points": 4},
+        {"answer": "north macedonia", "points": 2},
+        {"answer": "malawi", "points": 1},
+        {"answer": "mali", "points": 1},
+        {"answer": "paraguay", "points": 11},
+        {"answer": "rwanda", "points": 3},
+        {"answer": "san marino", "points": 12},
+        {"answer": "serbia", "points": 8},
+        {"answer": "slovakia", "points": 9},
+        {"answer": "south sudan", "points": 3},
+        {"answer": "swaziland", "points": 1},
+        {"answer": "switzerland", "points": 48},
+        {"answer": "tajikistan", "points": 2},
+        {"answer": "turkmenistan", "points": 1},
+        {"answer": "uganda", "points": 3},
+        {"answer": "uzbekistan", "points": 2},
+        {"answer": "vatican city", "points": 30},
+        {"answer": "zambia", "points": 6},
+        {"answer": "zimbabwe", "points": 6}
     ]
 }
