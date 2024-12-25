@@ -1,14 +1,13 @@
 {
 	"type": "guess",
 	"topic": "Sport",
-	"question": "Olympic Multi-Event Disciplines",
+	"question": "Olympic Track and Field Disciplines",
     "answers": [
         {
             "answer": "100m",
             "points": 44
         },
-        {
-            "answer": "110m hurdles",
+        {   "answer": "110m hurdles",
             "points": 15
         },
         {
